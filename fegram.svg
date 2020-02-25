@@ -85,6 +85,7 @@
         </filter>
 
         <!-- INSTAGRAM EARLYBIRD FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/xxGOava -->
         <radialGradient id="gradient_earlybird">
             <stop offset="20%" stop-color="rgb(208, 186, 142)" stop-opacity="100%" />
             <stop offset="100%" stop-color="rgb(29, 2, 16)" stop-opacity="20%" />
@@ -105,10 +106,12 @@
         </filter>
 
         <!-- INSTAGRAM GINGHAM FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/mdJRgyW -->
         <linearGradient id="gradient_gingham">
             <stop offset="100%" stop-color="rgb(66, 10, 14)" stop-opacity="20%" />
             <stop offset="0%" stop-color="black" stop-opacity="0%" />
         </linearGradient>
+        <rect id="ginghamsc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="overlay" fill="url(#gradient_gingham)"/>
         <filter id="gingham">
             <!-- brightness -->
             <feComponentTransfer>
@@ -117,7 +120,8 @@
             <!-- hue rotate -->
             <feColorMatrix in="SourceGraphic" type="hueRotate" values="350"/>
             <!-- blend mode -->
-            <feFlood flood-color="#gradient_gingham" flood-opacity=".3" />
+            <feImage xlink:href="#ginghamsc" result="grad" x="0" y="0"/>
+            <!-- <feFlood flood-color="#gradient_gingham" flood-opacity=".3" /> -->
             <feBlend mode="darken" in="SourceGraphic" />
             <!-- alternate config
     <feFlood flood-color="#e6e6fa" flood-opacity=".3" />
@@ -126,6 +130,7 @@
         </filter>
 
         <!-- INSTAGRAM HUDSON FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/YzXNvNO -->
         <radialGradient id="gradient_hudson">
             <stop offset="50%" stop-color="rgb(255, 177, 166)" stop-opacity="100%" />
             <stop offset="100%" stop-color="rgb(52, 33, 52)" stop-opacity="100%" />
@@ -167,6 +172,7 @@
         </filter>
 
         <!-- INSTAGRAM LOFI FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/QWbdxgj -->
         <radialGradient id="gradient_lofi">
             <stop offset="70%" stop-color="black" stop-opacity="0%" />
             <stop offset="150%" stop-color="rgb(34,34,34)" stop-opacity="100%" />
