@@ -7,7 +7,7 @@
                __/ |                    
               |___/                     
 
-## 16 instagram filter effects in svg
+## 17 [Instagram filter effects in SVG][0]
 
 ### filter ids
 
@@ -27,6 +27,10 @@
 - maven
 - moon
 - perpetua
+- walden
 
 ### usage
+
 filters are defined in **defs**. see how to use svg defs in html and css.
+
+[0]: https://codepen.io/collection/XyPZJO

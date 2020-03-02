@@ -3,6 +3,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs>
         <!-- INSTAGRAM 1977 FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/abOwXWv -->
         <filter id="1977">
             <!-- contrast -->
             <feComponentTransfer>
@@ -17,16 +18,20 @@
             <!-- saturate -->
             <feColorMatrix in="SourceGraphic" type="saturate" values="1.3"/>
             <feFlood flood-color="rgb(248,106,188)" flood-opacity=".3" />
+            <!--<feImage xlink:href="#1977sc" result="grad" x="0" y="0"/> -->
             <feBlend mode="screen" in="SourceGraphic" />
         </filter>
         <!-- screen on filtered image -->
         <rect id="1977sc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="screen" fill="rgb(248,106,188)"/>
 
         <!-- INSTAGRAM ADEN FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/gOpMzPZ -->
         <linearGradient id="gradient_aden">
             <stop offset="0%" stop-color="#420A18" stop-opacity="20%" />
             <stop offset="100%" stop-color="#420A18" stop-opacity="0%" />
         </linearGradient>
+        <!-- screen on filtered image -->
+        <rect id="adensc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="darken" fill="url(#gradient_aden)"/>
         <filter id="aden">
             <!-- contrast -->
             <feComponentTransfer>
@@ -39,17 +44,19 @@
             <!-- hue rotate -->
             <feColorMatrix in="SourceGraphic" type="hueRotate" values="20"/>
             <!-- blend mode -->
-            <feFlood flood-color="#gradient_aden" flood-opacity=".3" />
+            <feImage xlink:href="#adensc" result="grad" x="0" y="0"/>
+            <!-- <feFlood flood-color="#gradient_aden" flood-opacity=".3" /> -->
             <feBlend mode="darken" in="SourceGraphic" />
         </filter>
-        <!-- screen on filtered image -->
-        <rect id="adensc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="darken" fill="url(#gradient_aden)"/>
 
         <!-- INSTAGRAM BROOKLYN FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/bGdgKVP -->
         <radialGradient id="gradient_brooklyn" cx="70%" cy="70%">
             <stop offset="0%" stop-color="#A8DFC1" stop-opacity="40%" />
             <stop offset="100%" stop-color="#B7C4C8" stop-opacity="20%" />
         </radialGradient>
+        <!-- screen on filtered image -->
+        <rect id="brooksc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="overlay" fill="url(#gradient_brooklyn)"/>
         <filter id="brooklyn">
             <!-- contrast -->
             <feComponentTransfer>
@@ -59,22 +66,24 @@
             <feComponentTransfer>
                 <feFuncA type="linear" slope="1.1"/>
             </feComponentTransfer>
-            <feFlood flood-color="#gradient_brooklyn" flood-opacity=".3" />
+            <!-- <feFlood flood-color="#gradient_brooklyn" flood-opacity=".3" /> -->
+            <feImage xlink:href="#brooksc" result="grad" x="0" y="0"/>
             <feBlend mode="overlay" in="SourceGraphic" />
         </filter>
-        <!-- screen on filtered image -->
-        <rect id="brooksc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="overlay" fill="url(#gradient_brooklyn)"/>
 
         <!-- INSTAGRAM KELVIN FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/xxGOarp -->
         <filter id="kelvin">
             <feFlood flood-color="#b77d21" flood-opacity=".3" />
+            <!-- <feImage xlink:href="#kelvinsc" result="grad" x="0" y="0"/> -->
             <feBlend mode="overlay" in="SourceGraphic" />
             <feBlend mode="color-dodge" in="SourceGraphic" />
         </filter>
         <!-- screen on filtered image -->
-        <rect id="" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="overlay" fill="#b77d21"/>
+        <!-- <rect id="kelvinsc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="overlay" fill="#b77d21"/> -->
 
         <!-- INSTAGRAM BRANNAN FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/Poqjgxp -->
         <filter id="brannan">
             <!-- contrast -->
             <feComponentTransfer>
@@ -101,7 +110,8 @@
             <feComponentTransfer>
                 <feFuncA type="discrete" tableValues="0 1.4"/>
             </feComponentTransfer>
-            <feFlood flood-color="#gradient_earlybird" flood-opacity=".3" />
+            <!-- <feFlood flood-color="#gradient_earlybird" flood-opacity=".3" /> -->
+            <feImage xlink:href="#earlybirdsc" result="grad" x="0" y="0"/>
             <feBlend mode="overlay" in="SourceGraphic" />
         </filter>
 
@@ -135,6 +145,8 @@
             <stop offset="50%" stop-color="rgb(255, 177, 166)" stop-opacity="100%" />
             <stop offset="100%" stop-color="rgb(52, 33, 52)" stop-opacity="100%" />
         </radialGradient>
+        <!-- screen on filtered image -->
+        <rect id="hudsonsc" x="0" y="0" width="100%" height="100%" fill-opacity=".5" mix-blend-mode="overlay" fill="url(#gradient_hudson)"/>
         <filter id="hudson">
             <!-- contrast -->
             <feComponentTransfer>
@@ -147,11 +159,13 @@
             <!-- saturate -->
             <feColorMatrix in="SourceGraphic" type="saturate" values="1.1"/>
             <!-- blend mode -->
-            <feFlood flood-color="#gradient_hudson" flood-opacity=".5" />
+            <feImage xlink:href="#hudsonsc" result="grad" x="0" y="0"/>
+            <!-- <feFlood flood-color="#gradient_hudson" flood-opacity=".5" /> -->
             <feBlend mode="darken" in="SourceGraphic" />
         </filter>
 
         <!-- INSTAGRAM INKWELL FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/gOpRJgX -->
         <filter id="inkwell">
             <!-- contrast -->
             <feComponentTransfer>
@@ -190,6 +204,7 @@
         </filter>
 
         <!-- INSTAGRAM WALDEN FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/VwLWOWp -->
         <filter id="walden">
             <!-- brightness -->
             <feComponentTransfer>
@@ -211,6 +226,7 @@
         </filter>
 
         <!-- INSTAGRAM REYES FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/yLNXWor -->
         <filter id="reyes">
             <!-- contrast -->
             <feComponentTransfer>
@@ -234,10 +250,13 @@
         </filter>
 
         <!-- INSTAGRAM XPRO2 FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/NWqgVYE -->
         <radialGradient id="gradient_xpro">
             <stop offset="40%" stop-color="#e6e7e0" stop-opacity="100%" />
             <stop offset="110%" stop-color="rgb(43,42,161)" stop-opacity="60%" />
         </radialGradient>
+        <!-- Create a rectangle and apply the gradient as its fill -->
+        <rect id="xprosc" x="0" y="0" width="100%" height="100%" fill="url(#gradient_xpro)" fill-opacity=".5" mix-blend-mode="overlay"/>
         <filter id="xpro2">
             <!-- contrast -->
             <feComponentTransfer>
@@ -256,15 +275,19 @@
     .172 .334 .111 0 0
     .000 .000 .000 .3 0 " />
             <!-- blend mode -->
-            <feFlood flood-color="#gradient_xpro" flood-opacity=".5" />
+            <!-- <feFlood flood-color="#gradient_xpro" flood-opacity=".5" /> -->
+            <feImage xlink:href="#xprosc" result="grad" x="0" y="0"/>
             <feBlend mode="color-burn" in="SourceGraphic" />
         </filter>
 
         <!-- INSTAGRAM TOASTER FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/NWqgVoJ -->
         <radialGradient id="gradient_toaster">
             <stop offset="100%" stop-color="#804e0f" stop-opacity="100%" />
             <stop offset="0%" stop-color="#3b003b" stop-opacity="100%" />
         </radialGradient>
+        <!-- Create a rectangle and apply the gradient as its fill -->
+        <rect id="toastersc" x="0" y="0" width="100%" height="100%" fill="url(#gradient_toaster)" fill-opacity=".3" mix-blend-mode="overlay"/>
         <filter id="toaster">
             <!-- contrast -->
             <feComponentTransfer>
@@ -275,11 +298,13 @@
                 <feFuncA type="linear" slope=".9"/>
             </feComponentTransfer>
             <!-- blend mode -->
-            <feFlood flood-color="#gradient_toaster" flood-opacity=".3" />
+            <!-- <feFlood flood-color="#gradient_toaster" flood-opacity=".3" /> -->
+            <feImage xlink:href="#toastersc" result="grad" x="0" y="0"/>
             <feBlend mode="screen" in="SourceGraphic" />
         </filter>
 
         <!-- INSTAGRAM MAVEN FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/QWbgRPR -->
         <filter id="maven">
             <!-- contrast -->
             <feComponentTransfer>
@@ -303,6 +328,7 @@
         </filter>
 
         <!-- INSTAGRAM MOON FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/zYGNjQo -->
         <filter id="moon">
             <!-- contrast -->
             <feComponentTransfer>
@@ -322,13 +348,17 @@
         </filter>
 
         <!-- INSTAGRAM PERPETUA FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/JjdJQjJ -->
         <linearGradient id="gradient_perpetua">
             <stop offset="100%" stop-color="#005b9a" stop-opacity="10%" />
             <stop offset="100%" stop-color="#e6c13d" stop-opacity="100%" />
         </linearGradient>
+        <!-- Create a rectangle and apply the gradient as its fill -->
+        <rect id="perpetuasc" x="0" y="0" width="100%" height="100%" fill="url(#gradient_perpetua)" fill-opacity=".5" mix-blend-mode="overlay"/>
         <filter id="perpetua">
             <!-- blend mode -->
-            <feFlood flood-color="#gradient_perpetua" flood-opacity=".5" />
+            <!-- <feFlood flood-color="#gradient_perpetua" flood-opacity=".5" /> -->
+            <feImage xlink:href="#perpetuasc" result="grad" x="0" y="0"/>
             <feBlend mode="soft-light" in="SourceGraphic" />
         </filter>
     </defs>
