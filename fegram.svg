@@ -379,5 +379,41 @@
             <!--<feImage xlink:href="#clarendonsc" result="grad" x="0" y="0"/> -->
             <feBlend mode="screen" in="SourceGraphic" />
         </filter>
+
+        <!-- INSTAGRAM Lark FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/BaNddwL -->
+        <!-- screen on filtered image -->
+        <!-- <rect id="larksc" x="0%" y="0%" width="100%" height="100%" fill-opacity=".8" mix-blend-mode="darken" fill="rgba(242, 242, 242, 1)"/> -->
+        <filter id="lark">
+            <!-- contrast -->
+            <feComponentTransfer>
+                <feFuncA type="discrete" tableValues="0 .9"/>
+            </feComponentTransfer>
+            <feFlood flood-color="rgba(242, 242, 242, 1)" flood-opacity=".8" />
+            <!--<feImage xlink:href="#larksc" result="grad" x="0" y="0"/> -->
+            <feBlend mode="darken" in="SourceGraphic" />
+        </filter>
+
+        <!-- INSTAGRAM MAYFAIR FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/mdJMByO -->
+        <radialGradient id="gradient_mayfair" cx="40%" cy="40%">
+            <stop offset="0%" stop-color="rgba(255, 255, 255, 1)" stop-opacity="80%" />
+            <stop offset="30%" stop-color="rgba(255, 200, 200, 1)" stop-opacity="60%" />
+            <stop offset="60%" stop-color="#111111" />
+        </radialGradient>
+        <!-- screen on filtered image -->
+        <rect id="mayfairsc" x="0" y="0" width="100%" height="100%" fill-opacity=".4" mix-blend-mode="overlay" fill="url(#gradient_mayfair)"/>
+        <filter id="mayfair">
+            <!-- contrast -->
+            <feComponentTransfer>
+                <feFuncA type="discrete" tableValues="0 1.1"/>
+            </feComponentTransfer>
+            <!-- saturate -->
+            <feColorMatrix in="SourceGraphic" type="saturate" values="1.1"/>
+            <!-- blend mode -->
+            <feImage xlink:href="#mayfairsc" result="grad"/>
+            <!-- <feFlood flood-color="#gradient_mayfair" flood-opacity=".4" /> -->
+            <feBlend mode="overlay" in="SourceGraphic" />
+        </filter>
     </defs>
 </svg>

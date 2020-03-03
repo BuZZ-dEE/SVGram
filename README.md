@@ -7,7 +7,7 @@
                __/ |                    
               |___/                     
 
-## 18 [Instagram filter effects in SVG][0]
+## 20 [Instagram filter effects in SVG][0]
 
 ### filter ids
 
@@ -29,6 +29,8 @@
 - [moon][16]
 - [perpetua][17]
 - [clarendon][18]
+- [lark][19]
+- [mayfair][20]
 
 ### usage
 
@@ -53,3 +55,5 @@ filters are defined in **defs**. see how to use svg defs in html and css.
 [16]: https://codepen.io/BuZZ-dEE/pen/zYGNjQo
 [17]: https://codepen.io/BuZZ-dEE/pen/JjdJQjJ
 [18]: https://codepen.io/BuZZ-dEE/pen/YzXxxpo
+[19]: https://codepen.io/BuZZ-dEE/pen/BaNddwL
+[20]: https://codepen.io/BuZZ-dEE/pen/mdJMByO
