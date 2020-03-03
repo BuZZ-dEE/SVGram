@@ -439,5 +439,38 @@
             <!--<feImage xlink:href="#nashvillesc" result="grad" x="0" y="0"/> -->
             <feBlend mode="darken" in="SourceGraphic" />
         </filter>
+
+        <!-- INSTAGRAM RISE FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/ExjvpBo -->
+        <radialGradient id="gradient_rise_before">
+            <stop offset="55%" stop-color="rgba(236, 205, 169, 1)" stop-opacity=".15" />
+            <stop offset="100%" stop-color="rgba(50, 30, 7, 1)" stop-opacity=".4" />
+        </radialGradient>
+        <radialGradient id="gradient_rise_after">
+            <stop offset="0%" stop-color="rgba(232, 197, 152, 1)" stop-opacity=".8" />
+        </radialGradient>   
+        <!-- screen on filtered image -->
+        <rect id="risesc_before" x="0" y="0" width="300" height="300" mix-blend-mode="multiply" fill="url(#gradient_rise)"/>
+        <rect id="risesc_after" x="0" y="0" width="300" height="300" fill-opacity=".6" mix-blend-mode="overlay" fill="url(#gradient_rise_after)"/>
+        <filter id="rise">
+            <!-- brightness -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.05"/>
+                <feFuncG type="linear" slope="1.05"/>
+                <feFuncB type="linear" slope="1.05"/>
+            </feComponentTransfer>
+            <!-- sepia 0.2 needs to be added here -->
+            <!-- contrast -->
+            <feComponentTransfer>
+                <feFuncA type="discrete" tableValues="0 0.9"/>
+            </feComponentTransfer>
+            <!-- saturate -->
+            <feColorMatrix in="SourceGraphic" type="saturate" values="0.9"/>
+            <!-- blend mode -->
+            <feImage xlink:href="#risesc_before" result="grad" x="0" y="0"/>
+            <feBlend mode="multiply" in="SourceGraphic" in2="grad" />
+            <feImage xlink:href="#risesc_after" result="grad" x="0" y="0"/>
+            <feBlend mode="overlay" in="SourceGraphic" in2="grad" />
+        </filter>
     </defs>
 </svg>
