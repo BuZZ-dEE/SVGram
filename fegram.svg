@@ -415,5 +415,29 @@
             <!-- <feFlood flood-color="#gradient_mayfair" flood-opacity=".4" /> -->
             <feBlend mode="overlay" in="SourceGraphic" />
         </filter>
+
+        <!-- INSTAGRAM Nashville FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/gOpxjoq -->
+        <!-- screen on filtered image -->
+        <!-- <rect id="nashvillesc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="screen" fill="rgb(248,106,188)"/> -->
+        <filter id="nashville">
+            <!-- contrast -->
+            <feComponentTransfer>
+                <feFuncA type="discrete" tableValues="0 1.2"/>
+            </feComponentTransfer>
+            <!-- brightness -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.05"/>
+                <feFuncG type="linear" slope="1.05"/>
+                <feFuncB type="linear" slope="1.05"/>
+            </feComponentTransfer>
+            <!-- saturate -->
+            <feColorMatrix in="SourceGraphic" type="saturate" values="1.2"/>
+            <!-- <feFlood flood-color="rgba(0, 70, 150, 1)" flood-opacity=".4" />
+            <feBlend mode="lighten" in="SourceGraphic" /> -->
+            <feFlood flood-color="rgba(247, 176, 153, 1)" flood-opacity=".56" />
+            <!--<feImage xlink:href="#nashvillesc" result="grad" x="0" y="0"/> -->
+            <feBlend mode="darken" in="SourceGraphic" />
+        </filter>
     </defs>
 </svg>
