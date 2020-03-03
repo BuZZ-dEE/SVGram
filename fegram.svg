@@ -363,5 +363,21 @@
             <feImage xlink:href="#perpetuasc" result="grad" x="0" y="0"/>
             <feBlend mode="soft-light" in="SourceGraphic" />
         </filter>
+
+        <!-- INSTAGRAM Clarendon FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/YzXxxpo -->
+        <!-- screen on filtered image -->
+        <!-- <rect id="clarendonsc" x="0%" y="0%" width="100%" height="100%" fill-opacity=".2" mix-blend-mode="overlay" fill="rgba(127, 187, 227, 1)"/> -->
+        <filter id="clarendon">
+            <!-- contrast -->
+            <feComponentTransfer>
+                <feFuncA type="discrete" tableValues="0 1.2"/>
+            </feComponentTransfer>
+            <!-- saturate -->
+            <feColorMatrix in="SourceGraphic" type="saturate" values="1.35"/>
+            <feFlood flood-color="rgba(127, 187, 227, 1)" flood-opacity=".2" />
+            <!--<feImage xlink:href="#clarendonsc" result="grad" x="0" y="0"/> -->
+            <feBlend mode="screen" in="SourceGraphic" />
+        </filter>
     </defs>
 </svg>
