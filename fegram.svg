@@ -472,5 +472,23 @@
             <feImage xlink:href="#risesc_after" result="grad" x="0" y="0"/>
             <feBlend mode="overlay" in="SourceGraphic" in2="grad" />
         </filter>
+
+        <!-- INSTAGRAM SLUMBER FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/YzXxOJP -->
+        <filter id="slumber">
+            <!-- saturate -->
+            <feColorMatrix in="SourceGraphic" type="saturate" values="0.66"/>
+            <!-- brightness -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.05"/>
+                <feFuncG type="linear" slope="1.05"/>
+                <feFuncB type="linear" slope="1.05"/>
+            </feComponentTransfer>
+            <feFlood flood-color="rgba(69, 41, 12, 0.4)" flood-opacity=".4" />
+            <feBlend mode="lighten" in="SourceGraphic" />
+            <feFlood flood-color="rgba(125, 105, 24, .5)" flood-opacity=".5" />
+            <feBlend mode="soft-light" in="SourceGraphic" />
+        </filter>
+
     </defs>
 </svg>
