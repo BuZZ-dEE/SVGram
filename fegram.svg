@@ -508,5 +508,23 @@
             <feFlood flood-color="rgba(240, 149, 128, 0.2)" flood-opacity=".2" />
             <feBlend mode="soft-light" in="SourceGraphic" />
         </filter>
+
+        <!-- INSTAGRAM VALENCIA FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/WNvEgVX -->
+        <filter id="valencia">
+            <!-- contrast -->
+            <feComponentTransfer>
+                <feFuncA type="discrete" tableValues="0 1.08"/>
+            </feComponentTransfer>
+            <!-- brightness -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.08"/>
+                <feFuncG type="linear" slope="1.08"/>
+                <feFuncB type="linear" slope="1.08"/>
+            </feComponentTransfer>
+            <!-- sepia 0.08 needs to be added -->
+            <feFlood flood-color="#3a0339" flood-opacity=".5" />
+            <feBlend mode="exclusion" in="SourceGraphic" />
+        </filter>
     </defs>
 </svg>
