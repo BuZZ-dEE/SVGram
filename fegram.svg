@@ -490,5 +490,23 @@
             <feBlend mode="soft-light" in="SourceGraphic" />
         </filter>
 
+        <!-- INSTAGRAM STINSON FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/yLNoxwj -->
+        <filter id="stinson">
+            <!-- contrast -->
+            <feComponentTransfer>
+                <feFuncA type="discrete" tableValues="0 0.75"/>
+            </feComponentTransfer>
+            <!-- saturate -->
+            <feColorMatrix in="SourceGraphic" type="saturate" values="0.85"/>
+            <!-- brightness -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.15"/>
+                <feFuncG type="linear" slope="1.15"/>
+                <feFuncB type="linear" slope="1.15"/>
+            </feComponentTransfer>
+            <feFlood flood-color="rgba(240, 149, 128, 0.2)" flood-opacity=".2" />
+            <feBlend mode="soft-light" in="SourceGraphic" />
+        </filter>
     </defs>
 </svg>
