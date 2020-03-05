@@ -29,26 +29,29 @@
         <!-- INSTAGRAM ADEN FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/gOpMzPZ -->
         <linearGradient id="gradient_aden">
-            <stop offset="0%" stop-color="#420A18" stop-opacity="20%" />
+            <stop offset="0%" stop-color="#420A18" stop-opacity="100%" />
             <stop offset="100%" stop-color="#420A18" stop-opacity="0%" />
         </linearGradient>
         <!-- screen on filtered image -->
-        <rect id="adensc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="darken" fill="url(#gradient_aden)"/>
+        <rect id="adensc" x="0" y="0" width="100%" height="100%" fill-opacity=".2" fill="url(#gradient_aden)" />
         <filter id="aden">
+            <!--hue-rotate -->
+            <feColorMatrix type="hueRotate" values="-20"/>
             <!-- contrast -->
             <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 .9"/>
+                <feFuncR type="linear" slope=".9" intercept="0.05"/>
+                <feFuncG type="linear" slope=".9" intercept="0.05"/>
+                <feFuncB type="linear" slope=".9" intercept="0.05"/>
             </feComponentTransfer>
             <!-- brightness -->
-            <feComponentTransfer>
-                <feFuncA type="linear" slope="1.2"/>
+            <feComponentTransfer result="hcb">
+                <feFuncR type="linear" slope="1.2"/>
+                <feFuncG type="linear" slope="1.2"/>
+                <feFuncB type="linear" slope="1.2"/>
             </feComponentTransfer>
-            <!-- hue rotate -->
-            <feColorMatrix in="SourceGraphic" type="hueRotate" values="20"/>
             <!-- blend mode -->
-            <feImage xlink:href="#adensc" result="grad" x="0" y="0"/>
-            <!-- <feFlood flood-color="#gradient_aden" flood-opacity=".3" /> -->
-            <feBlend mode="darken" in="SourceGraphic" />
+            <feImage xlink:href="#adensc" result="grad" x="0" y="0" width="100%" height="100%"/>
+            <feBlend mode="darken" in="hcb" />
         </filter>
 
         <!-- INSTAGRAM BROOKLYN FILTER -->
