@@ -6,7 +6,8 @@
 	"recommendations": [
 		"jock.svg",
 		"editorconfig.editorconfig",
-		"1000ch.svgo"
+		"1000ch.svgo",
+		"acarreiro.calculate"
 	],
 	// List of extensions recommended by VS Code that should not be recommended for users of this workspace.
 	"unwantedRecommendations": [
