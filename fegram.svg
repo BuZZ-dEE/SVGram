@@ -272,28 +272,18 @@
             <stop offset="110%" stop-color="rgb(43,42,161)" stop-opacity="60%" />
         </radialGradient>
         <!-- Create a rectangle and apply the gradient as its fill -->
-        <rect id="xprosc" x="0" y="0" width="100%" height="100%" fill="url(#gradient_xpro)" fill-opacity=".5" mix-blend-mode="overlay"/>
+        <rect id="xprosc" x="0" y="0" width="100%" height="100%" fill="url(#gradient_xpro)" fill-opacity="0.3"/>
         <filter id="xpro2">
-            <!-- contrast -->
-            <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 .85"/>
-            </feComponentTransfer>
-            <!-- brightness -->
-            <feComponentTransfer>
-                <feFuncA type="linear" slope="1.1"/>
-            </feComponentTransfer>
-            <!-- saturate -->
-            <feColorMatrix in="SourceGraphic" type="saturate" values=".75"/>
-            <!-- sepia with opacity 30% -->
-            <feColorMatrix type="matrix" values="
-    .343 .669 .119 0 0 
-    .249 .626 .130 0 0
-    .172 .334 .111 0 0
-    .000 .000 .000 .3 0 " />
+            <!-- sepia 0.3 -->
+            <feColorMatrix result="sepia" type="matrix"
+                         values="
+                0.8179 0.2307 0.0567 0 0
+                0.1047 0.9058 0.0504 0 0
+                0.0816 0.1602 0.7393 0 0
+                0 0 0 1 0"/>
             <!-- blend mode -->
-            <!-- <feFlood flood-color="#gradient_xpro" flood-opacity=".5" /> -->
             <feImage xlink:href="#xprosc" result="grad" x="0" y="0"/>
-            <feBlend mode="color-burn" in="SourceGraphic" />
+            <feBlend mode="color-burn" in="sepia" />
         </filter>
 
         <!-- INSTAGRAM TOASTER FILTER -->
