@@ -56,24 +56,30 @@
 
         <!-- INSTAGRAM BROOKLYN FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/bGdgKVP -->
-        <radialGradient id="gradient_brooklyn" cx="70%" cy="70%">
-            <stop offset="0%" stop-color="#A8DFC1" stop-opacity="40%" />
-            <stop offset="100%" stop-color="#B7C4C8" stop-opacity="20%" />
-        </radialGradient>
+        <!-- INSTAGRAM BROOKLYN FILTER -->
+        <radialGradient id="gradient_brooklyn">
+            <!-- <stop offset="70%" stop-color="#A8DFC1" stop-opacity="40%" />
+            <stop offset="100%" stop-color="#B7C4C8" stop-opacity="100%" /> -->
+            <stop offset="70%" stop-color="rgba(168, 223, 193, 0.4)" stop-opacity="100%" />
+            <stop offset="100%" stop-color="#c4b7c8" stop-opacity="100%" />
+        </radialGradient>   
         <!-- screen on filtered image -->
-        <rect id="brooksc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="overlay" fill="url(#gradient_brooklyn)"/>
+        <rect id="brooksc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" fill="url(#gradient_brooklyn)"/>
         <filter id="brooklyn">
             <!-- contrast -->
             <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 .9"/>
+                <feFuncR type="linear" slope="0.9" intercept="0.05"/>
+                <feFuncG type="linear" slope="0.9" intercept="0.05"/>
+                <feFuncB type="linear" slope="0.9" intercept="0.05"/>
             </feComponentTransfer>
             <!-- brightness -->
-            <feComponentTransfer>
-                <feFuncA type="linear" slope="1.1"/>
+            <feComponentTransfer result="cb">
+                <feFuncR type="linear" slope="1.1"/>
+                <feFuncG type="linear" slope="1.1"/>
+                <feFuncB type="linear" slope="1.1"/>
             </feComponentTransfer>
-            <!-- <feFlood flood-color="#gradient_brooklyn" flood-opacity=".3" /> -->
             <feImage xlink:href="#brooksc" result="grad" x="0" y="0"/>
-            <feBlend mode="overlay" in="SourceGraphic" />
+            <feBlend mode="overlay" in="cb" />
         </filter>
 
         <!-- INSTAGRAM KELVIN FILTER -->
