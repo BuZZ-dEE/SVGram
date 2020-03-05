@@ -506,7 +506,9 @@
         <filter id="stinson">
             <!-- contrast -->
             <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 0.75"/>
+                <feFuncR type="linear" slope="0.75" intercept="0.125"/>
+                <feFuncG type="linear" slope="0.75" intercept="0.125"/>
+                <feFuncB type="linear" slope="0.75" intercept="0.125"/>
             </feComponentTransfer>
             <!-- saturate -->
             <feColorMatrix in="SourceGraphic" type="saturate" values="0.85"/>
@@ -516,7 +518,7 @@
                 <feFuncG type="linear" slope="1.15"/>
                 <feFuncB type="linear" slope="1.15"/>
             </feComponentTransfer>
-            <feFlood flood-color="rgba(240, 149, 128, 0.2)" flood-opacity=".2" />
+            <feFlood flood-color="rgba(240, 149, 128, .2)" flood-opacity="1" />
             <feBlend mode="soft-light" in="SourceGraphic" />
         </filter>
 
