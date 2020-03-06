@@ -56,7 +56,6 @@
 
         <!-- INSTAGRAM BROOKLYN FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/bGdgKVP -->
-        <!-- INSTAGRAM BROOKLYN FILTER -->
         <radialGradient id="gradient_brooklyn">
             <!-- <stop offset="70%" stop-color="#A8DFC1" stop-opacity="40%" />
             <stop offset="100%" stop-color="#B7C4C8" stop-opacity="100%" /> -->
@@ -116,23 +115,27 @@
         <!-- INSTAGRAM EARLYBIRD FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/xxGOava -->
         <radialGradient id="gradient_earlybird">
-            <stop offset="20%" stop-color="rgb(208, 186, 142)" stop-opacity="100%" />
-            <stop offset="100%" stop-color="rgb(29, 2, 16)" stop-opacity="20%" />
+            <stop offset="20%" stop-color="#d0ba8e" stop-opacity="100%" />
+            <stop offset="85%" stop-color="#360309" stop-opacity="100%" />
+            <stop offset="100%" stop-color="#1d0210" stop-opacity="100%" />
         </radialGradient>
+        <!-- Create a rectangle and apply the gradient as its fill -->
+        <rect id="earlybirdsc" x="0%" y="0%" width="100%" height="100%" fill="url(#gradient_earlybird)" fill-opacity="0.3"/>
         <filter id="earlybird">
-            <!-- sepia with opacity 20%-->
-            <feColorMatrix type="matrix" values="
-    .343 .669 .119 0 0 
-    .249 .626 .130 0 0
-    .172 .334 .111 0 0
-    .000 .000 .000 .2 0 " />
             <!-- contrast -->
             <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 1.4"/>
+                <feFuncR type="linear" slope="0.9" intercept="0.05"/>
+                <feFuncG type="linear" slope="0.9" intercept="0.05"/>
+                <feFuncB type="linear" slope="0.9" intercept="0.05"/>
             </feComponentTransfer>
-            <!-- <feFlood flood-color="#gradient_earlybird" flood-opacity=".3" /> -->
+            <!-- sepia 0.2-->
+            <feColorMatrix result="cs" type="matrix" values="
+                        0.8786 0.1538 0.0378 0 0
+                        0.0698 0.9372 0.0336 0 0
+                        0.0544 0.1068 0.8262 0 0
+                        0 0 0 1 0"/>
             <feImage xlink:href="#earlybirdsc" result="grad" x="0" y="0"/>
-            <feBlend mode="overlay" in="SourceGraphic" />
+            <feBlend mode="overlay" in="cs" />
         </filter>
 
         <!-- INSTAGRAM GINGHAM FILTER -->
