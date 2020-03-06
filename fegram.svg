@@ -9,7 +9,6 @@
                 <feFuncR type="linear" slope="1.1" intercept="−0,05"/>
                 <feFuncG type="linear" slope="1.1" intercept="−0,05"/>
                 <feFuncB type="linear" slope="1.1" intercept="−0,05"/>
-                <!-- <feFuncA type="discrete" tableValues="0 1.1"/> -->
             </feComponentTransfer>
             <!-- brightness -->
             <feComponentTransfer>
@@ -139,26 +138,25 @@
 
         <!-- INSTAGRAM GINGHAM FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/mdJRgyW -->
-        <linearGradient id="gradient_gingham">
-            <stop offset="100%" stop-color="rgb(66, 10, 14)" stop-opacity="20%" />
+        <!-- <linearGradient id="gradient_gingham">
+            <stop offset="100%" stop-color="#e6e6fa" stop-opacity="20%" />
             <stop offset="0%" stop-color="black" stop-opacity="0%" />
         </linearGradient>
-        <rect id="ginghamsc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="overlay" fill="url(#gradient_gingham)"/>
+        <rect id="ginghamsc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" fill="url(#gradient_gingham)"/> -->
         <filter id="gingham">
             <!-- brightness -->
             <feComponentTransfer>
-                <feFuncA type="linear" slope="1.05"/>
+                <feFuncR type="linear" slope="1.05"/>
+                <feFuncG type="linear" slope="1.05"/>
+                <feFuncB type="linear" slope="1.05"/>
             </feComponentTransfer>
             <!-- hue rotate -->
-            <feColorMatrix in="SourceGraphic" type="hueRotate" values="350"/>
+            <feColorMatrix type="hueRotate" values="-10" result="bh"/>
             <!-- blend mode -->
-            <feImage xlink:href="#ginghamsc" result="grad" x="0" y="0"/>
-            <!-- <feFlood flood-color="#gradient_gingham" flood-opacity=".3" /> -->
-            <feBlend mode="darken" in="SourceGraphic" />
-            <!-- alternate config
-    <feFlood flood-color="#e6e6fa" flood-opacity=".3" />
-    <feBlend mode="soft-light" in="SourceGraphic" />
-    -->
+            <!-- <feImage xlink:href="#ginghamsc" result="grad" x="0" y="0"/>
+            <feBlend mode="soft-light" in2="bh" /> -->
+            <feFlood flood-color="#e6e6fa" flood-opacity="1" />
+            <feBlend mode="soft-light" in2="bh" />
         </filter>
 
         <!-- INSTAGRAM HUDSON FILTER -->
