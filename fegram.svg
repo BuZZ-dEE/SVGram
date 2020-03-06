@@ -193,22 +193,26 @@
         <!-- INSTAGRAM INKWELL FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/gOpRJgX -->
         <filter id="inkwell">
+            <!-- sepia 0.3 -->
+            <feColorMatrix type="matrix" values="
+                        0.8179 0.2307 0.0567 0 0
+                        0.1047 0.9058 0.0504 0 0
+                        0.0816 0.1602 0.7393 0 0
+                        0 0 0 1 0"/>
             <!-- contrast -->
             <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 1.1"/>
+                <feFuncR type="linear" slope="1.1" intercept="-0.05"/>
+                <feFuncG type="linear" slope="1.1" intercept="-0.05"/>
+                <feFuncB type="linear" slope="1.1" intercept="-0.05"/>
             </feComponentTransfer>
             <!-- brightness -->
-            <feComponentTransfer>
-                <feFuncA type="linear" slope="1.1"/>
+            <feComponentTransfer result="scb">
+                <feFuncR type="linear" slope="1.1"/>
+                <feFuncG type="linear" slope="1.1"/>
+                <feFuncB type="linear" slope="1.1"/>
             </feComponentTransfer>
-            <!-- sepia with opacity 30% -->
-            <feColorMatrix type="matrix" values="
-    .343 .669 .119 0 0 
-    .249 .626 .130 0 0
-    .172 .334 .111 0 0
-    .000 .000 .000 .3 0 " />
             <!-- grayscale 100% -->
-            <feColorMatrix in="SourceGraphic" type="saturate" values="0"/>
+            <feColorMatrix type="saturate" values="0"/>
         </filter>
 
         <!-- INSTAGRAM LOFI FILTER -->
