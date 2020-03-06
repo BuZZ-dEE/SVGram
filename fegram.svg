@@ -318,23 +318,26 @@
         <!-- https://codepen.io/BuZZ-dEE/pen/NWqgVoJ -->
         <radialGradient id="gradient_toaster">
             <stop offset="100%" stop-color="#804e0f" stop-opacity="100%" />
-            <stop offset="0%" stop-color="#3b003b" stop-opacity="100%" />
+            <stop offset="100%" stop-color="#3b003b" stop-opacity="100%" />
         </radialGradient>
         <!-- Create a rectangle and apply the gradient as its fill -->
-        <rect id="toastersc" x="0" y="0" width="100%" height="100%" fill="url(#gradient_toaster)" fill-opacity=".3" mix-blend-mode="overlay"/>
+        <rect id="toastersc" x="0" y="0" width="100%" height="100%" fill="url(#gradient_toaster)" fill-opacity=".3" />
         <filter id="toaster">
             <!-- contrast -->
             <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 1.5"/>
+                <feFuncR type="linear" slope="1.5" intercept="-0.25"/>
+                <feFuncG type="linear" slope="1.5" intercept="-0.25"/>
+                <feFuncB type="linear" slope="1.5" intercept="-0.25"/>
             </feComponentTransfer>
             <!-- brightness -->
-            <feComponentTransfer>
-                <feFuncA type="linear" slope=".9"/>
+            <feComponentTransfer result="cb">
+                <feFuncR type="linear" slope=".9"/>
+                <feFuncG type="linear" slope=".9"/>
+                <feFuncB type="linear" slope=".9"/>
             </feComponentTransfer>
             <!-- blend mode -->
-            <!-- <feFlood flood-color="#gradient_toaster" flood-opacity=".3" /> -->
             <feImage xlink:href="#toastersc" result="grad" x="0" y="0"/>
-            <feBlend mode="screen" in="SourceGraphic" />
+            <feBlend mode="screen" in="cb" />
         </filter>
 
         <!-- INSTAGRAM MAVEN FILTER -->
@@ -563,7 +566,7 @@
     </defs>
 
     <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
-        id="imageFiltered" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#reyes)"/>
+        id="imageFiltered" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#toaster)"/>
     <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
         id="imageOriginal" x="5%" y="60%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
 </svg>
