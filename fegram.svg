@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+<svg width="300" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
     <defs>
         <!-- INSTAGRAM 1977 FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/abOwXWv -->
@@ -106,7 +106,6 @@
                 <feFuncR type="linear" slope="1.4" intercept="0,025"/>
                 <feFuncG type="linear" slope="1.4" intercept="0,025"/>
                 <feFuncB type="linear" slope="1.4" intercept="0,025"/>
-                <!-- <feFuncA type="discrete" tableValues="0 1.4"/> -->
             </feComponentTransfer>
             <feFlood flood-color="rgb(161,44,199)" flood-opacity=".31" />
             <feBlend mode="lighten" in="SourceGraphic" />
@@ -544,5 +543,7 @@
     </defs>
 
     <image xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
-        id="image" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" filter="url(#brannan)"/> 
+        id="imageFiltered" x="0" y="0" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#kelvin)"/>
+    <image xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
+        id="imageOriginal" x="0" y="50%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
 </svg>
