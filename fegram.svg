@@ -244,21 +244,24 @@
         <filter id="walden">
             <!-- brightness -->
             <feComponentTransfer>
-                <feFuncA type="linear" slope="1.1"/>
+                <feFuncR type="linear" slope="1.1"/>
+                <feFuncG type="linear" slope="1.1"/>
+                <feFuncB type="linear" slope="1.1"/>
             </feComponentTransfer>
             <!-- hue rotate -->
-            <feColorMatrix in="SourceGraphic" type="hueRotate" values="350"/>
+            <feColorMatrix type="hueRotate" values="350"/>
+            <!-- sepia 0.3 -->
+            <feColorMatrix type="matrix"
+                         values="
+                0.8179 0.2307 0.0567 0 0
+                0.1047 0.9058 0.0504 0 0
+                0.0816 0.1602 0.7393 0 0
+                0 0 0 1 0"/>
             <!-- saturate -->
-            <feColorMatrix in="SourceGraphic" type="saturate" values="1.6"/>
-            <!-- sepia with opacity 30% -->
-            <feColorMatrix type="matrix" values="
-    .343 .669 .119 0 0 
-    .249 .626 .130 0 0
-    .172 .334 .111 0 0
-    .000 .000 .000 .3 0 " />
+            <feColorMatrix result="bhss" type="saturate" values="1.6"/>
             <!-- blend mode -->
-            <feFlood flood-color="#04c" flood-opacity=".3" />
-            <feBlend mode="screen" in="SourceGraphic" />
+            <feFlood flood-color="##0044cc" flood-opacity=".3" />
+            <feBlend mode="screen" in="bhss"  />
         </filter>
 
         <!-- INSTAGRAM REYES FILTER -->
@@ -555,7 +558,7 @@
     </defs>
 
     <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
-        id="imageFiltered" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#hudson)"/>
+        id="imageFiltered" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#walden)"/>
     <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
         id="imageOriginal" x="5%" y="60%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
 </svg>
