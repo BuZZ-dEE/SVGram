@@ -206,7 +206,7 @@
                 <feFuncB type="linear" slope="1.1" intercept="-0.05"/>
             </feComponentTransfer>
             <!-- brightness -->
-            <feComponentTransfer result="scb">
+            <feComponentTransfer>
                 <feFuncR type="linear" slope="1.1"/>
                 <feFuncG type="linear" slope="1.1"/>
                 <feFuncB type="linear" slope="1.1"/>
@@ -219,18 +219,24 @@
         <!-- https://codepen.io/BuZZ-dEE/pen/QWbdxgj -->
         <radialGradient id="gradient_lofi">
             <stop offset="70%" stop-color="black" stop-opacity="0%" />
-            <stop offset="150%" stop-color="rgb(34,34,34)" stop-opacity="100%" />
+            <stop offset="150%" stop-color="#222222" stop-opacity="100%" />
         </radialGradient>
-        <filter id="lofi">
-            <!-- contrast -->
-            <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 1.5"/>
-            </feComponentTransfer>
+        <!-- screen on filtered image -->
+        <rect id="lofisc" x="0" y="0" width="100%" height="100%" fill-opacity=".5" fill="url(#gradient_lofi)"/>
+        <filter id="lofi" filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- saturate -->
             <feColorMatrix in="SourceGraphic" type="saturate" values="1.1"/>
+            <!-- contrast -->
+            <feComponentTransfer result="sc">
+                <feFuncR type="linear" slope="1.5" intercept="-0.25"/>
+                <feFuncG type="linear" slope="1.5" intercept="-0.25"/>
+                <feFuncB type="linear" slope="1.5" intercept="-0.25"/>
+            </feComponentTransfer>
             <!-- blend mode -->
-            <feFlood flood-color="#gradient_lofi" flood-opacity=".3" />
-            <feBlend mode="multiply" in="SourceGraphic" />
+            <feImage xlink:href="#lofisc" result="grad" x="" y="0" width="100%" height="100%"/>
+            <feBlend mode="multiply" in="sc" />
         </filter>
 
         <!-- INSTAGRAM WALDEN FILTER -->
