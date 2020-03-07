@@ -440,23 +440,24 @@
         <!-- INSTAGRAM MAYFAIR FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/mdJMByO -->
         <radialGradient id="gradient_mayfair" cx="40%" cy="40%">
-            <stop offset="0%" stop-color="rgba(255, 255, 255, 1)" stop-opacity="80%" />
-            <stop offset="30%" stop-color="rgba(255, 200, 200, 1)" stop-opacity="60%" />
+            <stop offset="0%" stop-color="rgba(255, 255, 255, 0.8)" stop-opacity="100%" />
+            <stop offset="30%" stop-color="rgba(255, 200, 200, 0.6)" stop-opacity="100%" />
             <stop offset="60%" stop-color="#111111" />
         </radialGradient>
         <!-- screen on filtered image -->
-        <rect id="mayfairsc" x="0" y="0" width="100%" height="100%" fill-opacity=".4" mix-blend-mode="overlay" fill="url(#gradient_mayfair)"/>
+        <rect id="mayfairsc" x="0" y="0" width="100%" height="100%" fill-opacity=".4" fill="url(#gradient_mayfair)"/>
         <filter id="mayfair">
             <!-- contrast -->
             <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 1.1"/>
+                <feFuncR type="linear" slope="1.1" intercept="-0.05"/>
+                <feFuncG type="linear" slope="1.1" intercept="-0.05"/>
+                <feFuncB type="linear" slope="1.1" intercept="-0.05"/>
             </feComponentTransfer>
             <!-- saturate -->
-            <feColorMatrix in="SourceGraphic" type="saturate" values="1.1"/>
+            <feColorMatrix result="cs" type="saturate" values="1.1"/>
             <!-- blend mode -->
             <feImage xlink:href="#mayfairsc" result="grad"/>
-            <!-- <feFlood flood-color="#gradient_mayfair" flood-opacity=".4" /> -->
-            <feBlend mode="overlay" in="SourceGraphic" />
+            <feBlend mode="overlay" in="grad" in2="cs" />
         </filter>
 
         <!-- INSTAGRAM Nashville FILTER -->
@@ -574,7 +575,7 @@
     </defs>
 
     <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
-        id="imageFiltered" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#lark)"/>
+        id="imageFiltered" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#mayfair)"/>
     <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
         id="imageOriginal" x="5%" y="60%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
 </svg>
