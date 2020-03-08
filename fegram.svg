@@ -493,34 +493,44 @@
         <!-- INSTAGRAM RISE FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/ExjvpBo -->
         <radialGradient id="gradient_rise_before">
-            <stop offset="55%" stop-color="rgba(236, 205, 169, 1)" stop-opacity=".15" />
-            <stop offset="100%" stop-color="rgba(50, 30, 7, 1)" stop-opacity=".4" />
+            <stop offset="55%" stop-color="rgba(236, 205, 169, 0.15)" stop-opacity="1" />
+            <stop offset="100%" stop-color="rgba(50, 30, 7, 0.4)" stop-opacity="1" />
         </radialGradient>
         <radialGradient id="gradient_rise_after">
-            <stop offset="0%" stop-color="rgba(232, 197, 152, 1)" stop-opacity=".8" />
+            <stop offset="0%" stop-color="rgba(232, 197, 152, 0.8)" stop-opacity="1" />
+            <stop offset="90%" stop-color="#000" stop-opacity="1" />
         </radialGradient>   
         <!-- screen on filtered image -->
-        <rect id="risesc_before" x="0" y="0" width="300" height="300" mix-blend-mode="multiply" fill="url(#gradient_rise)"/>
-        <rect id="risesc_after" x="0" y="0" width="300" height="300" fill-opacity=".6" mix-blend-mode="overlay" fill="url(#gradient_rise_after)"/>
-        <filter id="rise">
+        <rect id="risesc_before" x="0" y="0" width="100%" height="100%" fill="url(#gradient_rise_before)"/>
+        <rect id="risesc_after" x="0" y="0" width="100%" height="100%" fill-opacity=".6" fill="url(#gradient_rise_after)"/>
+        <filter id="rise" filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- brightness -->
             <feComponentTransfer>
                 <feFuncR type="linear" slope="1.05"/>
                 <feFuncG type="linear" slope="1.05"/>
                 <feFuncB type="linear" slope="1.05"/>
             </feComponentTransfer>
-            <!-- sepia 0.2 needs to be added here -->
+            <!-- sepia 0.2 -->
+            <feColorMatrix type="matrix"
+                         values="
+                0.8786 0.1538 0.0378 0 0
+                0.0698 0.9372 0.0336 0 0
+                0.0544 0.1068 0.8262 0 0
+                0 0 0 1 0"/>
             <!-- contrast -->
             <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 0.9"/>
+                <feFuncR type="linear" slope="0.9" intercept="0.05"/>
+                <feFuncG type="linear" slope="0.9" intercept="0.05"/>
+                <feFuncB type="linear" slope="0.9" intercept="0.05"/>
             </feComponentTransfer>
             <!-- saturate -->
-            <feColorMatrix in="SourceGraphic" type="saturate" values="0.9"/>
+            <feColorMatrix result="bscs" type="saturate" values="0.9"/>
             <!-- blend mode -->
-            <feImage xlink:href="#risesc_before" result="grad" x="0" y="0"/>
-            <feBlend mode="multiply" in="SourceGraphic" in2="grad" />
-            <feImage xlink:href="#risesc_after" result="grad" x="0" y="0"/>
-            <feBlend mode="overlay" in="SourceGraphic" in2="grad" />
+            <feImage xlink:href="#risesc_before" result="grad_risesc_before" x="0" y="0"/>
+            <feBlend mode="multiply" in2="grad_risesc_before" />
+            <feImage xlink:href="#risesc_after" result="grad_risesc_after" x="0" y="0"/>
+            <feBlend mode="overlay" in="bscs" in2="grad_risesc_after" />
         </filter>
 
         <!-- INSTAGRAM SLUMBER FILTER -->
@@ -581,7 +591,7 @@
     </defs>
 
     <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
-        id="imageFiltered" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#nashville)"/>
+        id="imageFiltered" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#rise)"/>
     <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
         id="imageOriginal" x="5%" y="60%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
 </svg>
