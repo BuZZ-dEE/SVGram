@@ -576,10 +576,13 @@
 
         <!-- INSTAGRAM VALENCIA FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/WNvEgVX -->
-        <filter id="valencia">
+        <filter id="valencia" filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- contrast -->
             <feComponentTransfer>
-                <feFuncA type="discrete" tableValues="0 1.08"/>
+                <feFuncR type="linear" slope="1.08" intercept="-0.04"/>
+                <feFuncG type="linear" slope="1.08" intercept="-0.04"/>
+                <feFuncB type="linear" slope="1.08" intercept="-0.04"/>
             </feComponentTransfer>
             <!-- brightness -->
             <feComponentTransfer>
@@ -587,14 +590,21 @@
                 <feFuncG type="linear" slope="1.08"/>
                 <feFuncB type="linear" slope="1.08"/>
             </feComponentTransfer>
-            <!-- sepia 0.08 needs to be added -->
-            <feFlood flood-color="#3a0339" flood-opacity=".5" />
-            <feBlend mode="exclusion" in="SourceGraphic" />
+            <!-- sepia 0.08 -->
+            <feColorMatrix result="cbs" type="matrix"
+                         values="
+                0.95144 0.06152 0.01512 0 0
+                0.02792 0.97488 0.01344 0 0
+                0.02176 0.04272 0.93048 0 0
+                0 0 0 1 0"/>
+            <feFlood flood-color="#3a0339" flood-opacity=".5"/>
+            <!-- <feFlood flood-color="#dff4e0" flood-opacity=".5"/> -->
+            <feBlend mode="exclusion" in2="cbs"/>
         </filter>
     </defs>
 
     <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
-        id="imageFiltered" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#stinson)"/>
+        id="imageFiltered" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#valencia)"/>
     <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
         id="imageOriginal" x="5%" y="60%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
 </svg>
