@@ -82,14 +82,16 @@
 
         <!-- INSTAGRAM KELVIN FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/xxGOarp -->
-        <filter id="kelvin">
-            <feFlood flood-color="#b77d21" flood-opacity=".3" />
-            <!-- <feImage xlink:href="#kelvinsc" result="grad" x="0" y="0"/> -->
-            <feBlend mode="overlay" in="SourceGraphic" />
-            <feBlend mode="color-dodge" in="SourceGraphic" />
+        <filter id="kelvin"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
+            <feFlood flood-color="#382c34"/>
+            <feBlend mode="color-dodge" in2="SourceGraphic" result="color-dodge"/>
+            <feFlood flood-color="#b77d21"/>
+            <feBlend mode="overlay" in2="color-dodge"/>
         </filter>
-        <!-- screen on filtered image -->
-        <!-- <rect id="kelvinsc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="overlay" fill="#b77d21"/> -->
 
         <!-- INSTAGRAM BRANNAN FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/Poqjgxp -->
