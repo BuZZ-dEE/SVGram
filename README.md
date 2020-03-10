@@ -36,7 +36,8 @@
 - [slumber][23]
 - [stinson][24]
 - [valencia][25]
-- [hefe][26]
+- [willow][26]
+- [hefe][27]
 
 ### usage
 
@@ -68,4 +69,5 @@ filters are defined in **defs**. see how to use svg defs in html and css.
 [23]: https://codepen.io/BuZZ-dEE/pen/YzXxOJP
 [24]: https://codepen.io/BuZZ-dEE/pen/yLNoxwj
 [25]: https://codepen.io/BuZZ-dEE/pen/WNvEgVX
-[26]: https://codepen.io/BuZZ-dEE/pen/MWwrrOe
+[26]: https://codepen.io/BuZZ-dEE/pen/dyozEyP
+[27]: https://codepen.io/BuZZ-dEE/pen/MWwrrOe
