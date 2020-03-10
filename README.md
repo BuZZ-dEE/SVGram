@@ -7,7 +7,7 @@
                                         
                                                 
 
-## 25 [Instagram filter effects in SVG][0]
+## 26 [Instagram filter effects in SVG][0]
 
 ### filter ids
 
@@ -36,6 +36,7 @@
 - [slumber][23]
 - [stinson][24]
 - [valencia][25]
+- [hefe][26]
 
 ### usage
 
@@ -67,3 +68,4 @@ filters are defined in **defs**. see how to use svg defs in html and css.
 [23]: https://codepen.io/BuZZ-dEE/pen/YzXxOJP
 [24]: https://codepen.io/BuZZ-dEE/pen/yLNoxwj
 [25]: https://codepen.io/BuZZ-dEE/pen/WNvEgVX
+[26]: https://codepen.io/BuZZ-dEE/pen/MWwrrOe

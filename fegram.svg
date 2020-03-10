@@ -688,10 +688,43 @@
             <feFlood flood-color="#3a0339" flood-opacity=".5"/>
             <feBlend mode="exclusion" in2="cbs"/>
         </filter>
+
+        <!-- INSTAGRAM HEFE FILTER -->
+        <filter id="hefe"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
+            <!-- contrast -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.3" intercept="-0.15"/>
+                <feFuncG type="linear" slope="1.3" intercept="-0.15"/>
+                <feFuncB type="linear" slope="1.3" intercept="-0.15"/>
+            </feComponentTransfer>
+            <!-- sepia 0.3 -->
+            <feColorMatrix type="matrix"
+                         values="
+                0.8179 0.2307 0.0567 0 0
+                0.1047 0.9058 0.0504 0 0
+                0.0816 0.1602 0.7393 0 0
+                0 0 0 1 0"/>
+            <!-- saturate -->
+            <feColorMatrix type="saturate" values="1.3"/>
+            <!--hue-rotate -->
+            <feColorMatrix type="hueRotate" values="-10"/>
+            <!-- brightness -->
+            <feComponentTransfer result="csshb">
+                <feFuncR type="linear" slope="0.95"/>
+                <feFuncG type="linear" slope="0.95"/>
+                <feFuncB type="linear" slope="0.95"/>
+            </feComponentTransfer>
+            <feFlood flood-color="rgba(243, 106, 188, 0)" flood-opacity="1"/>
+            <feBlend mode="initial" in2="csshb"/>
+        </filter>
     </defs>
 
     <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
-        id="imageFiltered" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#valencia)"/>
+        id="imageFiltered" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice" filter="url(#hefe)"/>
     <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
         id="imageOriginal" x="5%" y="60%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
 </svg>
