@@ -3,7 +3,11 @@
     <defs>
         <!-- INSTAGRAM 1977 FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/abOwXWv -->
-        <filter id="1977">
+        <filter id="1977"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- contrast -->
             <feComponentTransfer>
                 <feFuncR type="linear" slope="1.1" intercept="−0,05"/>
@@ -33,7 +37,11 @@
         </linearGradient>
         <!-- screen on filtered image -->
         <rect id="adensc" x="0" y="0" width="100%" height="100%" fill-opacity=".2" fill="url(#gradient_aden)" />
-        <filter id="aden">
+        <filter id="aden"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!--hue-rotate -->
             <feColorMatrix type="hueRotate" values="-20"/>
             <!-- contrast -->
@@ -63,7 +71,11 @@
         </radialGradient>   
         <!-- screen on filtered image -->
         <rect id="brooksc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" fill="url(#gradient_brooklyn)"/>
-        <filter id="brooklyn">
+        <filter id="brooklyn"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- contrast -->
             <feComponentTransfer>
                 <feFuncR type="linear" slope="0.9" intercept="0.05"/>
@@ -95,7 +107,11 @@
 
         <!-- INSTAGRAM BRANNAN FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/Poqjgxp -->
-        <filter id="brannan">
+        <filter id="brannan"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- sepia 0.5 -->
             <feColorMatrix type="matrix"
                            values="0.6965 0.3845 0.0945 0 0
@@ -103,13 +119,13 @@
                                    0.136  0.267  0.5655 0 0
                                    0      0      0      1 0" />
             <!-- contrast -->
-            <feComponentTransfer>
+            <feComponentTransfer result="sc">
                 <feFuncR type="linear" slope="1.4" intercept="0,025"/>
                 <feFuncG type="linear" slope="1.4" intercept="0,025"/>
                 <feFuncB type="linear" slope="1.4" intercept="0,025"/>
             </feComponentTransfer>
-            <feFlood flood-color="rgb(161,44,199)" flood-opacity=".31" />
-            <feBlend mode="lighten" in="SourceGraphic" />
+            <feFlood flood-color="rgb(161,44,199,.31)"/>
+            <feBlend mode="lighten" in="sc" />
         </filter>
 
         <!-- INSTAGRAM EARLYBIRD FILTER -->
@@ -121,7 +137,11 @@
         </radialGradient>
         <!-- Create a rectangle and apply the gradient as its fill -->
         <rect id="earlybirdsc" x="0%" y="0%" width="100%" height="100%" fill="url(#gradient_earlybird)" fill-opacity="0.3"/>
-        <filter id="earlybird">
+        <filter id="earlybird"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- contrast -->
             <feComponentTransfer>
                 <feFuncR type="linear" slope="0.9" intercept="0.05"/>
@@ -145,7 +165,11 @@
             <stop offset="0%" stop-color="black" stop-opacity="0%" />
         </linearGradient>
         <rect id="ginghamsc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" fill="url(#gradient_gingham)"/> -->
-        <filter id="gingham">
+        <filter id="gingham"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- brightness -->
             <feComponentTransfer>
                 <feFuncR type="linear" slope="1.05"/>
@@ -171,8 +195,10 @@
         </radialGradient>
         <!-- screen on filtered image -->
         <rect id="hudsonsc" x="0" y="0" width="100%" height="100%" fill-opacity=".5" fill="url(#gradient_hudson)"/>
-        <filter id="hudson" filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox"
-                x="0" y="0" width="100%" height="100%" >
+        <filter id="hudson"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- brightness -->
             <feComponentTransfer>
                 <feFuncR type="linear" slope="1.2"/>
@@ -194,7 +220,10 @@
 
         <!-- INSTAGRAM INKWELL FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/gOpRJgX -->
-        <filter id="inkwell">
+        <filter id="inkwell"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- sepia 0.3 -->
             <feColorMatrix type="matrix" values="
                         0.8179 0.2307 0.0567 0 0
@@ -217,7 +246,7 @@
             <feColorMatrix type="saturate" values="0"/>
         </filter>
 
-        <!-- INSTAGRAM LOFI FILTER -->
+        <!-- INSTAGRAM LOFI FILTER too dark -->
         <!-- https://codepen.io/BuZZ-dEE/pen/QWbdxgj -->
         <radialGradient id="gradient_lofi">
             <stop offset="70%" stop-color="black" stop-opacity="0%" />
@@ -225,7 +254,9 @@
         </radialGradient>
         <!-- screen on filtered image -->
         <rect id="lofisc" x="0" y="0" width="100%" height="100%" fill-opacity=".5" fill="url(#gradient_lofi)"/>
-        <filter id="lofi" filterUnits="objectBoundingBox"
+        <filter id="lofi"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
                 primitiveUnits="objectBoundingBox"
                 x="0" y="0" width="100%" height="100%">
             <!-- saturate -->
@@ -241,9 +272,13 @@
             <feBlend mode="multiply" in="sc" />
         </filter>
 
-        <!-- INSTAGRAM WALDEN FILTER -->
+        <!-- INSTAGRAM WALDEN FILTER not blue enough -->
         <!-- https://codepen.io/BuZZ-dEE/pen/VwLWOWp -->
-        <filter id="walden">
+        <filter id="walden"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- brightness -->
             <feComponentTransfer>
                 <feFuncR type="linear" slope="1.1"/>
@@ -268,7 +303,11 @@
 
         <!-- INSTAGRAM REYES FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/yLNXWor -->
-        <filter id="reyes">
+        <filter id="reyes"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- sepia 0.2 -->
             <feColorMatrix type="matrix"
                          values="
@@ -298,12 +337,16 @@
         <!-- INSTAGRAM XPRO2 FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/NWqgVYE -->
         <radialGradient id="gradient_xpro">
-            <stop offset="40%" stop-color="#e6e7e0" stop-opacity="100%" />
-            <stop offset="110%" stop-color="rgb(43,42,161)" stop-opacity="60%" />
+            <stop offset="40%" stop-color="#e6e7e0" stop-opacity="100%"/>
+            <stop offset="110%" stop-color="rgb(43,42,161, 0.6)"/>
         </radialGradient>
         <!-- Create a rectangle and apply the gradient as its fill -->
         <rect id="xprosc" x="0" y="0" width="100%" height="100%" fill="url(#gradient_xpro)" fill-opacity="0.3"/>
-        <filter id="xpro2">
+        <filter id="xpro2"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- sepia 0.3 -->
             <feColorMatrix result="sepia" type="matrix"
                          values="
@@ -313,10 +356,10 @@
                 0 0 0 1 0"/>
             <!-- blend mode -->
             <feImage xlink:href="#xprosc" result="grad" x="0" y="0"/>
-            <feBlend mode="color-burn" in="sepia" />
+            <feBlend mode="color-burn" in2="sepia" />
         </filter>
 
-        <!-- INSTAGRAM TOASTER FILTER -->
+        <!-- INSTAGRAM TOASTER FILTER not equal to cssgram-->
         <!-- https://codepen.io/BuZZ-dEE/pen/NWqgVoJ -->
         <radialGradient id="gradient_toaster">
             <stop offset="100%" stop-color="#804e0f" stop-opacity="100%" />
@@ -324,7 +367,11 @@
         </radialGradient>
         <!-- Create a rectangle and apply the gradient as its fill -->
         <rect id="toastersc" x="0" y="0" width="100%" height="100%" fill="url(#gradient_toaster)" fill-opacity=".3" />
-        <filter id="toaster">
+        <filter id="toaster"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- contrast -->
             <feComponentTransfer>
                 <feFuncR type="linear" slope="1.5" intercept="-0.25"/>
@@ -339,12 +386,16 @@
             </feComponentTransfer>
             <!-- blend mode -->
             <feImage xlink:href="#toastersc" result="grad" x="0" y="0"/>
-            <feBlend mode="screen" in="cb" />
+            <feBlend mode="screen" in2="cb" />
         </filter>
 
         <!-- INSTAGRAM MAVEN FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/QWbgRPR -->
-        <filter id="maven">
+        <filter id="maven"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- sepia 0.25 -->
             <feColorMatrix type="matrix"
                          values="
@@ -367,13 +418,17 @@
             <!-- saturate -->
             <feColorMatrix result="sbcs" type="saturate" values="1.5"/>
             <!-- blend mode -->
-            <feFlood flood-color="rgba(3, 230, 26, 0.2)" flood-opacity="1" />
-            <feBlend mode="hue" in="sbcs" />
+            <feFlood flood-color="rgba(3, 230, 26, 0.2)" flood-opacity="1"/>
+            <feBlend mode="hue" in2="sbcs"/>
         </filter>
 
         <!-- INSTAGRAM MOON FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/zYGNjQo -->
-        <filter id="moon">
+        <filter id="moon"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- grayscale 100% -->
             <feColorMatrix type="saturate" values="0"/>
             <!-- contrast -->
@@ -395,7 +450,7 @@
             <feBlend mode="lighten" in="gcbsl" />
         </filter>
 
-        <!-- INSTAGRAM PERPETUA FILTER -->
+        <!-- INSTAGRAM PERPETUA FILTER css to bottom hot to do that?-->
         <!-- https://codepen.io/BuZZ-dEE/pen/JjdJQjJ -->
         <linearGradient id="gradient_perpetua">
             <stop offset="0%" stop-color="#005b9a" stop-opacity="100%" />
@@ -403,15 +458,23 @@
         </linearGradient>
         <!-- Create a rectangle and apply the gradient as its fill -->
         <rect id="perpetuasc" x="0" y="0" width="100%" height="100%" fill="url(#gradient_perpetua)" fill-opacity=".5"/>
-        <filter id="perpetua">
+        <filter id="perpetua"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- blend mode -->
             <feImage xlink:href="#perpetuasc" result="grad" x="0" y="0"/>
-            <feBlend mode="soft-light" in="SourceGraphic" />
+            <feBlend mode="soft-light" in2="SourceGraphic" />
         </filter>
 
         <!-- INSTAGRAM Clarendon FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/YzXxxpo -->
-        <filter id="clarendon">
+        <filter id="clarendon"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- contrast -->
             <feComponentTransfer>
                 <feFuncR type="linear" slope="1.2" intercept="-0.1"/>
@@ -420,35 +483,43 @@
             </feComponentTransfer>
             <!-- saturate -->
             <feColorMatrix result="cs" type="saturate" values="1.35"/>
-            <feFlood flood-color="rgba(127, 187, 227, 0.2)" flood-opacity="1" />
+            <feFlood flood-color="rgba(127, 187, 227, 0.2)"/>
             <feBlend mode="overlay" in2="cs" />
         </filter>
 
         <!-- INSTAGRAM Lark FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/BaNddwL -->
-        <filter id="lark">
+        <filter id="lark"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- contrast -->
             <feComponentTransfer result="contrast">
                 <feFuncR type="linear" slope="0.9" intercept="0.05"/>
                 <feFuncG type="linear" slope="0.9" intercept="0.05"/>
                 <feFuncB type="linear" slope="0.9" intercept="0.05"/>
             </feComponentTransfer>
-            <feFlood flood-color="rgba(242, 242, 242, 0.8)" flood-opacity="1" />
-            <feBlend mode="darken" in="contrast" />
+            <feFlood flood-color="rgba(242, 242, 242, 0.8)"/>
+            <feBlend mode="darken" in="contrast" result="darken"/>
             <feFlood flood-color="#22253f" flood-opacity="1" />
-            <feBlend mode="color-dodge" in2="SourceGraphic" />
+            <feBlend mode="color-dodge" in2="darken" />
         </filter>
 
         <!-- INSTAGRAM MAYFAIR FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/mdJMByO -->
         <radialGradient id="gradient_mayfair" cx="40%" cy="40%">
-            <stop offset="0%" stop-color="rgba(255, 255, 255, 0.8)" stop-opacity="100%" />
-            <stop offset="30%" stop-color="rgba(255, 200, 200, 0.6)" stop-opacity="100%" />
+            <stop stop-color="rgba(255, 255, 255, 0.8)"/>
+            <stop stop-color="rgba(255, 200, 200, 0.6)"/>
             <stop offset="60%" stop-color="#111111" />
         </radialGradient>
         <!-- screen on filtered image -->
         <rect id="mayfairsc" x="0" y="0" width="100%" height="100%" fill-opacity=".4" fill="url(#gradient_mayfair)"/>
-        <filter id="mayfair">
+        <filter id="mayfair"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- contrast -->
             <feComponentTransfer>
                 <feFuncR type="linear" slope="1.1" intercept="-0.05"/>
@@ -458,13 +529,17 @@
             <!-- saturate -->
             <feColorMatrix result="cs" type="saturate" values="1.1"/>
             <!-- blend mode -->
-            <feImage xlink:href="#mayfairsc" result="grad"/>
-            <feBlend mode="overlay" in="grad" in2="cs" />
+            <feImage xlink:href="#mayfairsc"/>
+            <feBlend mode="overlay" in2="cs"/>
         </filter>
 
         <!-- INSTAGRAM Nashville FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/gOpxjoq -->
-        <filter id="nashville">
+        <filter id="nashville"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
             <!-- sepia 0.2 -->
             <feColorMatrix type="matrix"
                          values="
@@ -486,26 +561,29 @@
             </feComponentTransfer>
             <!-- saturate -->
             <feColorMatrix result="scbs" type="saturate" values="1.2"/>
-            <feFlood flood-color="rgba(247, 176, 153, 0.56)" flood-opacity="1" />
+            <feFlood flood-color="rgba(247, 176, 153, 0.56)"/>
             <feBlend mode="darken" in2="scbs" result="scbsd" />
-            <feFlood flood-color="rgba(0, 70, 150, 0.4)" flood-opacity="1" />
+            <feFlood flood-color="rgba(0, 70, 150, 0.4)"/>
             <feBlend mode="lighten" in2="scbsd" />
         </filter>
 
-        <!-- INSTAGRAM RISE FILTER -->
+        <!-- INSTAGRAM RISE FILTER  not 100% equal -->
         <!-- https://codepen.io/BuZZ-dEE/pen/ExjvpBo -->
         <radialGradient id="gradient_rise_before">
-            <stop offset="55%" stop-color="rgba(236, 205, 169, 0.15)" stop-opacity="1" />
-            <stop offset="100%" stop-color="rgba(50, 30, 7, 0.4)" stop-opacity="1" />
+            <stop offset="55%" stop-color="rgba(236, 205, 169, 0.15)"/>
+            <stop offset="100%" stop-color="rgba(50, 30, 7, 0.4)"/>
         </radialGradient>
         <radialGradient id="gradient_rise_after">
-            <stop offset="0%" stop-color="rgba(232, 197, 152, 0.8)" stop-opacity="1" />
-            <stop offset="90%" stop-color="#000" stop-opacity="1" />
+            <stop offset="0%" stop-color="rgba(232, 197, 152, 0.8)"/>
+            <stop offset="90%" stop-color="#000" stop-opacity="0"/>
         </radialGradient>   
         <!-- screen on filtered image -->
         <rect id="risesc_before" x="0" y="0" width="100%" height="100%" fill="url(#gradient_rise_before)"/>
         <rect id="risesc_after" x="0" y="0" width="100%" height="100%" fill-opacity=".6" fill="url(#gradient_rise_after)"/>
-        <filter id="rise" filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox"
+        <filter id="rise"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
                 x="0" y="0" width="100%" height="100%">
             <!-- brightness -->
             <feComponentTransfer>
@@ -530,14 +608,17 @@
             <feColorMatrix result="bscs" type="saturate" values="0.9"/>
             <!-- blend mode -->
             <feImage xlink:href="#risesc_before" result="grad_risesc_before" x="0" y="0"/>
-            <feBlend mode="multiply" in2="grad_risesc_before" />
+            <feBlend mode="multiply" in2="grad_risesc_before"/>
             <feImage xlink:href="#risesc_after" result="grad_risesc_after" x="0" y="0"/>
             <feBlend mode="overlay" in="bscs" in2="grad_risesc_after" />
         </filter>
 
         <!-- INSTAGRAM SLUMBER FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/YzXxOJP -->
-        <filter id="slumber"  filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox"
+        <filter id="slumber"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
                 x="0" y="0" width="100%" height="100%">
             <!-- saturate -->
             <feColorMatrix in="SourceGraphic" type="saturate" values="0.66"/>
@@ -547,15 +628,18 @@
                 <feFuncG type="linear" slope="1.05"/>
                 <feFuncB type="linear" slope="1.05"/>
             </feComponentTransfer>
-            <feFlood flood-color="rgba(69, 41, 12, 0.4)" flood-opacity="1" />
+            <feFlood flood-color="rgba(69, 41, 12, 0.4)"/>
             <feBlend mode="lighten" in="sb" result="sbl" />
-            <feFlood flood-color="rgba(125, 105, 24, 0.5)" flood-opacity="1" />
+            <feFlood flood-color="rgba(125, 105, 24, 0.5)"/>
             <feBlend mode="soft-light" in2="sbl" />
         </filter>
 
         <!-- INSTAGRAM STINSON FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/yLNoxwj -->
-        <filter id="stinson" filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox"
+        <filter id="stinson"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
                 x="0" y="0" width="100%" height="100%">
             <!-- contrast -->
             <feComponentTransfer>
@@ -571,14 +655,16 @@
                 <feFuncG type="linear" slope="1.15"/>
                 <feFuncB type="linear" slope="1.15"/>
             </feComponentTransfer>
-            <feFlood flood-color="rgba(240, 149, 128, 0.2)" flood-opacity="1"/>
-            <!-- <feBlend mode="soft-light" in2="csb" /> -->
-            <feBlend mode="soft-light" in2="SourceGraphic" />
+            <feFlood flood-color="rgba(240, 149, 128, 0.2)"/>
+            <feBlend mode="soft-light" in2="csb" />
         </filter>
 
         <!-- INSTAGRAM VALENCIA FILTER -->
         <!-- https://codepen.io/BuZZ-dEE/pen/WNvEgVX -->
-        <filter id="valencia" filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox"
+        <filter id="valencia"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
                 x="0" y="0" width="100%" height="100%">
             <!-- contrast -->
             <feComponentTransfer>
@@ -600,7 +686,6 @@
                 0.02176 0.04272 0.93048 0 0
                 0 0 0 1 0"/>
             <feFlood flood-color="#3a0339" flood-opacity=".5"/>
-            <!-- <feFlood flood-color="#dff4e0" flood-opacity=".5"/> -->
             <feBlend mode="exclusion" in2="cbs"/>
         </filter>
     </defs>
