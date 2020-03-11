@@ -762,6 +762,32 @@
             <feFlood flood-color="rgba(243, 106, 188, 0)" flood-opacity="1"/>
             <feBlend mode="initial" in2="csshb"/>
         </filter>
+        
+        <!-- pixelfed INSTAGRAM Ashby FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/XWbZBXy -->
+        <filter id="ashby"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
+            <!-- sepia 0.5 -->
+            <feColorMatrix type="matrix"
+                         values="
+                0.6965 0.3845 0.0945 0 0
+                0.1745 0.843 0.084 0 0
+                0.136 0.267 0.5655 0 0
+                0 0 0 1 0"/>
+            <!-- contrast 1.2 -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.2" intercept="-0.1"/>
+                <feFuncG type="linear" slope="1.2" intercept="-0.1"/>
+                <feFuncB type="linear" slope="1.2" intercept="-0.1"/>
+            </feComponentTransfer>
+            <!-- saturate 1.8 -->
+            <feColorMatrix type="saturate" values="1.8" result="scs"/>
+            <feFlood flood-color="rgba(125,105,24,1)" flood-opacity=".35"/>
+            <feBlend mode="lighten" in="scs"/>
+        </filter>
     </defs>
 
     <defs>
