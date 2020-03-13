@@ -762,10 +762,69 @@
             <feFlood flood-color="rgba(243, 106, 188, 0)" flood-opacity="1"/>
             <feBlend mode="initial" in2="csshb"/>
         </filter>
+        
+        <!-- pixelfed INSTAGRAM Ashby FILTER -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/XWbZBXy -->
+        <filter id="ashby"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
+            <!-- sepia 0.5 -->
+            <feColorMatrix type="matrix"
+                         values="
+                0.6965 0.3845 0.0945 0 0
+                0.1745 0.843 0.084 0 0
+                0.136 0.267 0.5655 0 0
+                0 0 0 1 0"/>
+            <!-- contrast 1.2 -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.2" intercept="-0.1"/>
+                <feFuncG type="linear" slope="1.2" intercept="-0.1"/>
+                <feFuncB type="linear" slope="1.2" intercept="-0.1"/>
+            </feComponentTransfer>
+            <!-- saturate 1.8 -->
+            <feColorMatrix type="saturate" values="1.8" result="scs"/>
+            <feFlood flood-color="rgba(125,105,24,1)" flood-opacity=".35"/>
+            <feBlend mode="lighten" in="scs"/>
+        </filter>
+
+        <!-- pixelfed Instagram Charmes filter -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/JjdpBLo -->
+        <filter id="charmes"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
+            <!-- sepia 0.25 -->
+            <feColorMatrix type="matrix" values="
+                        0.84825 0.19225 0.04725 0 0
+                        0.08725 0.9215 0.042 0 0
+                        0.068 0.1335 0.78275 0 0
+                        0 0 0 1 0"/>
+            <!-- contrast 1.25 -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.25" intercept="-0.125"/>
+                <feFuncG type="linear" slope="1.25" intercept="-0.125"/>
+                <feFuncB type="linear" slope="1.25" intercept="-0.125"/>
+            </feComponentTransfer>
+            <!-- brightness 1.25 -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.25"/>
+                <feFuncG type="linear" slope="1.25"/>
+                <feFuncB type="linear" slope="1.25"/>
+            </feComponentTransfer>
+            <!-- saturate 1.35 -->
+            <feColorMatrix type="saturate" values="1.35"/>
+            <!--hue-rotate -5deg -->
+            <feColorMatrix type="hueRotate" values="-5" result="scbsh"/>
+            <feFlood flood-color="rgba(125,105,24,.25)" flood-opacity="1"/>
+            <feBlend mode="darken" in2="scbsh"/>
+        </filter>
 
         <!-- CSSgram Instagram Vesper filter -->
         <filter id="vesper"
-                color-interpolation-filters="sRGB"
+                        color-interpolation-filters="sRGB"
                 filterUnits="objectBoundingBox"
                 primitiveUnits="objectBoundingBox"
                 x="0" y="0" width="100%" height="100%">
@@ -808,13 +867,11 @@
                id="imageOriginal3" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
         <image transform="scale(.7)" xlink:href="https://una.im/CSSgram/img/tahoe.jpg"
                id="imageOriginal4" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
-    <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
+        <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
                id="imageOriginal" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
-    <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
+        <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
         id="imageOriginal" x="5%" y="60%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
     </defs>
-
-
 
     <use xlink:href="#imageOriginal" filter="url(#vesper)" />
     <use xlink:href="#imageOriginal" y="50%" />
