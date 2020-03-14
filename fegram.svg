@@ -968,6 +968,31 @@
             <feBlend mode="initial" in2="bcsh"/>
         </filter>
 
+        <!-- CSSgram Instagram Sierra filter -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/NWqYLOJ -->
+        <filter id="sierra"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
+            <!-- contrast -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="0.8" intercept="0.1"/>
+                <feFuncG type="linear" slope="0.8" intercept="0.1"/>
+                <feFuncB type="linear" slope="0.8" intercept="0.1"/>
+            </feComponentTransfer>
+            <!-- saturate -->
+            <feColorMatrix type="saturate" values="1.2"/>
+            <!-- sepia 0.15 -->
+            <feColorMatrix  result="css" type="matrix"
+                    values="0.90895 0.11535 0.02835 0 0
+                            0.05235 0.9529 0.0252 0 0
+                            0.0408 0.0801 0.86965 0 0
+                            0 0 0 1 0"/>
+            <feFlood flood-color="rgba(0, 70, 150, 0)" flood-opacity="1"/>
+            <feBlend mode="initial" in2="css"/>
+        </filter>
+
     </defs>
 
     <defs>
@@ -985,6 +1010,6 @@
                id="imageOriginal" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
     </defs>
 
-    <use xlink:href="#imageOriginal" filter="url(#sutro)" />
+    <use xlink:href="#imageOriginal" filter="url(#sierra)" />
     <use xlink:href="#imageOriginal" y="50%" />
 </svg>
