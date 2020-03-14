@@ -854,11 +854,43 @@
             <feFlood flood-color="rgba(220, 250, 40, .1)" flood-opacity="1"/>
             <feBlend mode="darken" in2="hcsbs"/>
         </filter>
+
+        <!-- CSSgram Instagram Ginza filter -->
+        <filter id="ginza"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
+            <!-- sepia 0.2-->
+            <feColorMatrix type="matrix" values="
+                        0.8786 0.1538 0.0378 0 0
+                        0.0698 0.9372 0.0336 0 0
+                        0.0544 0.1068 0.8262 0 0
+                        0 0 0 1 0"/>
+            <!-- contrast -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.2" intercept="-0.1"/>
+                <feFuncG type="linear" slope="1.2" intercept="-0.1"/>
+                <feFuncB type="linear" slope="1.2" intercept="-0.1"/>
+            </feComponentTransfer>
+            <!-- brightness -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.05"/>
+                <feFuncG type="linear" slope="1.05"/>
+                <feFuncB type="linear" slope="1.05"/>
+            </feComponentTransfer>
+            <!-- saturate -->
+            <feColorMatrix result="scbs" type="saturate" values="1.2"/>
+            <feFlood flood-color="rgba(247, 176, 153, .56)" flood-opacity="1"/>
+            <feBlend mode="darken" in2="scbs" result="scbsfb"/>
+            <feFlood flood-color="rgba(0, 70, 150, .4)" flood-opacity="1"/>
+            <feBlend mode="lighten" in2="scbsfb"/>
+        </filter>
     </defs>
 
     <defs>
         <image transform="scale(.7)" xlink:href="https://una.im/CSSgram/img/bike.jpg"
-               id="imageOriginal0" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
+               id="imageOriginal1" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
         <image transform="scale(.7)" xlink:href="https://una.im/CSSgram/img/atx.jpg"
                id="imageOriginal1" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
         <image transform="scale(.7)" xlink:href="https://una.im/CSSgram/img/atx.jpg"
@@ -868,11 +900,9 @@
         <image transform="scale(.7)" xlink:href="https://una.im/CSSgram/img/tahoe.jpg"
                id="imageOriginal4" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
         <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
-               id="imageOriginal" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
-        <image transform="scale(.9)" xlink:href="https://media.istockphoto.com/photos/making-time-to-reconnect-as-a-couple-picture-id525025496?k=6&m=525025496&s=612x612&w=0&h=u4WJq6wf9SA6PZmiNSsJh3o5emyrNlniTJDu0KrQAPk="
-        id="imageOriginal" x="5%" y="60%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
+               id="imageOriginal" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
     </defs>
 
-    <use xlink:href="#imageOriginal" filter="url(#vesper)" />
+    <use xlink:href="#imageOriginal" filter="url(#ginza)" />
     <use xlink:href="#imageOriginal" y="50%" />
 </svg>
