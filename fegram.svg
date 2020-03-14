@@ -909,11 +909,39 @@
                 0 0 0 1 0"/>
         </filter>
 
+        <!-- CSSgram Instagram Amaro filter -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/dyomqZW -->
+        <radialGradient id="gradient_amaro" cx="29%" cy="33%">
+            <stop offset="0%" stop-color="rgba(85, 78, 136, 0.28)" stop-opacity="100%" />
+            <stop offset="50%" stop-color="rgb(72, 17, 76)" stop-opacity="100%" />
+            <stop offset="97%" stop-color="#540d80" stop-opacity="100%" />
+        </radialGradient>   
+        <!-- screen on filtered image -->
+        <rect id="amarosc" x="0" y="0" width="100%" height="100%" fill-opacity=".4" fill="url(#gradient_amaro)"/>
+        <filter id="amaro"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
+            <!--hue-rotate -->
+            <feColorMatrix type="hueRotate" values="-2"/>
+            <!-- brightness -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="0.9"/>
+                <feFuncG type="linear" slope="0.9"/>
+                <feFuncB type="linear" slope="0.9"/>
+            </feComponentTransfer>
+            <!-- saturate -->
+            <feColorMatrix result="hcbs" type="saturate" values="1.1"/>
+            <feImage xlink:href="#amarosc" result="grad" x="0" y="0"/>
+            <feBlend mode="screen" in="hcbs" />
+        </filter>
+
     </defs>
 
     <defs>
         <image transform="scale(.7)" xlink:href="https://una.im/CSSgram/img/bike.jpg"
-               id="imageOriginal1" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
+               id="imageOriginal0" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
         <image transform="scale(.7)" xlink:href="https://una.im/CSSgram/img/atx.jpg"
                id="imageOriginal1" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
         <image transform="scale(.7)" xlink:href="https://una.im/CSSgram/img/atx.jpg"
@@ -926,6 +954,6 @@
                id="imageOriginal" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
     </defs>
 
-    <use xlink:href="#imageOriginal" filter="url(#ludwig)" />
+    <use xlink:href="#imageOriginal" filter="url(#amaro)" />
     <use xlink:href="#imageOriginal" y="50%" />
 </svg>

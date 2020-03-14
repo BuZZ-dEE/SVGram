@@ -7,7 +7,7 @@
                                         
                                                 
 
-## 32 [Instagram filter effects in SVG][0]
+## 33 [Instagram filter effects in SVG][0]
 
 ### filter ids
 
@@ -43,6 +43,7 @@
 - [vesper][30]
 - [ginza][31]
 - [ludwig][32]
+- [amaro][33]
 
 ### usage
 
@@ -81,3 +82,4 @@ filters are defined in **defs**. see how to use svg defs in html and css.
 [30]: https://codepen.io/BuZZ-dEE/pen/VwLXBBv
 [31]: https://codepen.io/BuZZ-dEE/pen/poJLZmx
 [32]: https://codepen.io/BuZZ-dEE/pen/PoqRdZO
+[33]: https://codepen.io/BuZZ-dEE/pen/dyomqZW
