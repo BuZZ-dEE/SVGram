@@ -937,6 +937,37 @@
             <feBlend mode="screen" in="hcbs" />
         </filter>
 
+        <!-- CSSgram Instagram Sutro filter -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/eYNMLKN -->
+        <filter id="sutro"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
+            <!-- brightness -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="0.75"/>
+                <feFuncG type="linear" slope="0.75"/>
+                <feFuncB type="linear" slope="0.75"/>
+            </feComponentTransfer>
+            <!-- contrast -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.3" intercept="-0.15"/>
+                <feFuncG type="linear" slope="1.3" intercept="-0.15"/>
+                <feFuncB type="linear" slope="1.3" intercept="-0.15"/>
+            </feComponentTransfer>
+            <!-- sepia 0.5 -->
+            <feColorMatrix type="matrix"
+                        values="0.6965 0.3845 0.0945 0 0
+                                0.1745 0.843 0.084 0 0
+                                0.136 0.267 0.5655 0 0
+                                0 0 0 1 0"/>
+            <!--hue-rotate -->
+            <feColorMatrix result="bcsh" type="hueRotate" values="-25"/>
+            <feFlood flood-color="rgba(0, 70, 150, 0)" flood-opacity="1"/>
+            <feBlend mode="initial" in2="bcsh"/>
+        </filter>
+
     </defs>
 
     <defs>
@@ -954,6 +985,6 @@
                id="imageOriginal" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
     </defs>
 
-    <use xlink:href="#imageOriginal" filter="url(#amaro)" />
+    <use xlink:href="#imageOriginal" filter="url(#sutro)" />
     <use xlink:href="#imageOriginal" y="50%" />
 </svg>
