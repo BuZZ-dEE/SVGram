@@ -993,12 +993,33 @@
             <feBlend mode="initial" in2="css"/>
         </filter>
 
+        <!-- CSSgram Instagram Helena filter -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/jOPzgog -->
+        <filter id="helena"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
+            <!--hue-rotate -->
+            <feColorMatrix type="hueRotate" values="-18"/>
+            <!-- sepia 0.3 -->
+            <feColorMatrix type="matrix"
+                        values="0.8179 0.2307 0.0567 0 0
+                                0.1047 0.9058 0.0504 0 0
+                                0.0816 0.1602 0.7393 0 0
+                                0 0 0 1 0"/>
+            <!-- saturate -->
+            <feColorMatrix type="saturate" values="1.3" result="hss"/>
+            <feFlood flood-color="#007ccc" flood-opacity=".3"/>
+            <feBlend mode="soft-light" in2="hss"/>
+        </filter>
+
     </defs>
 
     <defs>
         <image transform="scale(.7)" xlink:href="https://una.im/CSSgram/img/bike.jpg"
                id="imageOriginal0" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
-        <image transform="scale(.7)" xlink:href="https://una.im/CSSgram/img/atx.jpg"
+        <image transform="scale(.7)" xlink:href="https://una.im/CSSgram/img/cacti.jpg"
                id="imageOriginal1" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
         <image transform="scale(.7)" xlink:href="https://una.im/CSSgram/img/atx.jpg"
                id="imageOriginal2" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/>
@@ -1010,6 +1031,6 @@
                id="imageOriginal" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
     </defs>
 
-    <use xlink:href="#imageOriginal" filter="url(#sierra)" />
+    <use xlink:href="#imageOriginal" filter="url(#helena)" />
     <use xlink:href="#imageOriginal" y="50%" />
 </svg>
