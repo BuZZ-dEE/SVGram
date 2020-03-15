@@ -1000,7 +1000,7 @@
                 filterUnits="objectBoundingBox"
                 primitiveUnits="objectBoundingBox"
                 x="0" y="0" width="100%" height="100%">
-            <!--hue-rotate -->
+            <!-- hue-rotate -->
             <feColorMatrix type="hueRotate" values="-18"/>
             <!-- sepia 0.3 -->
             <feColorMatrix type="matrix"
@@ -1012,6 +1012,29 @@
             <feColorMatrix type="saturate" values="1.3" result="hss"/>
             <feFlood flood-color="#007ccc" flood-opacity=".3"/>
             <feBlend mode="soft-light" in2="hss"/>
+        </filter>
+
+        <!-- CSSgram Instagram Skyline filter -->
+        <!-- https://codepen.io/BuZZ-dEE/pen/poJVzRg -->
+        <filter id="skyline"
+                color-interpolation-filters="sRGB"
+                filterUnits="objectBoundingBox"
+                primitiveUnits="objectBoundingBox"
+                x="0" y="0" width="100%" height="100%">
+            <!-- contrast -->
+            <feComponentTransfer>
+                <feFuncR type="linear" slope="1.1" intercept="-0.05"/>
+                <feFuncG type="linear" slope="1.1" intercept="-0.05"/>
+                <feFuncB type="linear" slope="1.1" intercept="-0.05"/>
+            </feComponentTransfer>
+            <!-- brightness -->
+            <feComponentTransfer result="cb">
+                <feFuncR type="linear" slope="1.2"/>
+                <feFuncG type="linear" slope="1.2"/>
+                <feFuncB type="linear" slope="1.2"/>
+            </feComponentTransfer>
+            <feFlood flood-color="rgba(93, 101, 186, 0.2)" flood-opacity="1"/>
+            <feBlend mode="overlay" in2="cb"/>
         </filter>
 
     </defs>
@@ -1031,6 +1054,6 @@
                id="imageOriginal" x="5%" y="5%" width="100%" height="50%" preserveAspectRatio="xMidYMid slice"/> 
     </defs>
 
-    <use xlink:href="#imageOriginal" filter="url(#helena)" />
+    <use xlink:href="#imageOriginal" filter="url(#skyline)" />
     <use xlink:href="#imageOriginal" y="50%" />
 </svg>
