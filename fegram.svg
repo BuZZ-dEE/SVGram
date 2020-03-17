@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="612" height="826" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
     <defs>
-        <!-- INSTAGRAM 1977 FILTER -->
+        <!-- Instagram 1977 filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/abOwXWv -->
         <filter id="1977"
                 color-interpolation-filters="sRGB"
@@ -29,7 +29,7 @@
         <!-- screen on filtered image -->
         <rect id="1977sc" x="0" y="0" width="100%" height="100%" fill-opacity=".3" mix-blend-mode="screen" fill="rgb(248,106,188)"/>
 
-        <!-- INSTAGRAM ADEN FILTER -->
+        <!-- Instagram Aden filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/gOpMzPZ -->
         <linearGradient id="gradient_aden">
             <stop offset="0%" stop-color="#420A18" stop-opacity="100%" />
@@ -61,7 +61,7 @@
             <feBlend mode="darken" in="hcb" />
         </filter>
 
-        <!-- INSTAGRAM BROOKLYN FILTER -->
+        <!-- Instagram Brooklyn filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/bGdgKVP -->
         <radialGradient id="gradient_brooklyn">
             <!-- <stop offset="70%" stop-color="#A8DFC1" stop-opacity="40%" />
@@ -92,7 +92,7 @@
             <feBlend mode="overlay" in="cb" />
         </filter>
 
-        <!-- INSTAGRAM KELVIN FILTER -->
+        <!-- Instagram Kelvin filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/xxGOarp -->
         <filter id="kelvin"
                 color-interpolation-filters="sRGB"
@@ -105,7 +105,7 @@
             <feBlend mode="overlay" in2="color-dodge"/>
         </filter>
 
-        <!-- INSTAGRAM BRANNAN FILTER -->
+        <!-- Instagram Brannan filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/Poqjgxp -->
         <filter id="brannan"
                 color-interpolation-filters="sRGB"
@@ -128,7 +128,7 @@
             <feBlend mode="lighten" in="sc" />
         </filter>
 
-        <!-- INSTAGRAM EARLYBIRD FILTER -->
+        <!-- Instagram Earlybird filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/xxGOava -->
         <radialGradient id="gradient_earlybird">
             <stop offset="20%" stop-color="#d0ba8e" stop-opacity="100%" />
@@ -158,7 +158,7 @@
             <feBlend mode="overlay" in="cs" />
         </filter>
 
-        <!-- INSTAGRAM GINGHAM FILTER -->
+        <!-- Instagram Gingham filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/mdJRgyW -->
         <!-- <linearGradient id="gradient_gingham">
             <stop offset="100%" stop-color="#e6e6fa" stop-opacity="20%" />
@@ -185,7 +185,7 @@
             <feBlend mode="soft-light" in2="bh" />
         </filter>
 
-        <!-- INSTAGRAM HUDSON FILTER -->
+        <!-- Instagram Hudson filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/YzXNvNO -->
         <radialGradient id="gradient_hudson" r="65%">
             <!-- <stop offset="50%" stop-color="rgb(255, 177, 166)" stop-opacity="100%" />
@@ -218,7 +218,7 @@
             <feBlend mode="multiply" in="bch" />
         </filter>
 
-        <!-- INSTAGRAM INKWELL FILTER -->
+        <!-- Instagram Inkwell filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/gOpRJgX -->
         <filter id="inkwell"
                 color-interpolation-filters="sRGB"
@@ -246,7 +246,7 @@
             <feColorMatrix type="saturate" values="0"/>
         </filter>
 
-        <!-- INSTAGRAM LOFI FILTER too dark -->
+        <!-- Instagram Lo-Fi filter too dark -->
         <!-- https://codepen.io/BuZZ-dEE/pen/QWbdxgj -->
         <radialGradient id="gradient_lofi">
             <stop offset="70%" stop-color="black" stop-opacity="0%" />
@@ -272,7 +272,7 @@
             <feBlend mode="multiply" in="sc" />
         </filter>
 
-        <!-- INSTAGRAM WALDEN FILTER not blue enough -->
+        <!-- Instagram Walden filter not blue enough -->
         <!-- https://codepen.io/BuZZ-dEE/pen/VwLWOWp -->
         <filter id="walden"
                 color-interpolation-filters="sRGB"
@@ -301,7 +301,7 @@
             <feBlend mode="screen" in="bhss"  />
         </filter>
 
-        <!-- INSTAGRAM REYES FILTER -->
+        <!-- Instagram Reyes filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/yLNXWor -->
         <filter id="reyes"
                 color-interpolation-filters="sRGB"
@@ -334,7 +334,7 @@
             <feBlend mode="soft-light" in2="sbcs" />
         </filter>
 
-        <!-- INSTAGRAM XPRO2 FILTER -->
+        <!-- Instagram X-pro II filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/NWqgVYE -->
         <radialGradient id="gradient_xpro">
             <stop offset="40%" stop-color="#e6e7e0" stop-opacity="100%"/>
@@ -359,7 +359,7 @@
             <feBlend mode="color-burn" in2="sepia" />
         </filter>
 
-        <!-- INSTAGRAM TOASTER FILTER not equal to cssgram-->
+        <!-- Instagram Toaster filter not equal to cssgram-->
         <!-- https://codepen.io/BuZZ-dEE/pen/NWqgVoJ -->
         <radialGradient id="gradient_toaster">
             <stop offset="100%" stop-color="#804e0f" stop-opacity="100%" />
@@ -389,7 +389,7 @@
             <feBlend mode="screen" in2="cb" />
         </filter>
 
-        <!-- INSTAGRAM MAVEN FILTER -->
+        <!-- Instagram Maven filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/QWbgRPR -->
         <filter id="maven"
                 color-interpolation-filters="sRGB"
@@ -422,7 +422,7 @@
             <feBlend mode="hue" in2="sbcs"/>
         </filter>
 
-        <!-- INSTAGRAM MOON FILTER -->
+        <!-- Instagram Moon filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/zYGNjQo -->
         <filter id="moon"
                 color-interpolation-filters="sRGB"
@@ -450,7 +450,7 @@
             <feBlend mode="lighten" in="gcbsl" />
         </filter>
 
-        <!-- INSTAGRAM PERPETUA FILTER css to bottom how to do that?-->
+        <!-- Instagram Perpetua filter css to bottom how to do that?-->
         <!-- https://codepen.io/BuZZ-dEE/pen/JjdJQjJ -->
         <linearGradient id="gradient_perpetua">
             <stop offset="0%" stop-color="#005b9a" stop-opacity="100%" />
@@ -468,7 +468,7 @@
             <feBlend mode="soft-light" in2="SourceGraphic" />
         </filter>
 
-        <!-- INSTAGRAM Clarendon FILTER -->
+        <!-- Instagram Clarendon filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/YzXxxpo -->
         <filter id="clarendon"
                 color-interpolation-filters="sRGB"
@@ -487,7 +487,7 @@
             <feBlend mode="overlay" in2="cs" />
         </filter>
 
-        <!-- INSTAGRAM Lark FILTER -->
+        <!-- Instagram Lark filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/BaNddwL -->
         <filter id="lark"
                 color-interpolation-filters="sRGB"
@@ -506,7 +506,7 @@
             <feBlend mode="color-dodge" in2="darken" />
         </filter>
 
-        <!-- INSTAGRAM MAYFAIR FILTER -->
+        <!-- Instagram Mayfair filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/mdJMByO -->
         <radialGradient id="gradient_mayfair" cx="40%" cy="40%">
             <stop stop-color="rgba(255, 255, 255, 0.8)"/>
@@ -533,7 +533,7 @@
             <feBlend mode="overlay" in2="cs"/>
         </filter>
 
-        <!-- INSTAGRAM Nashville FILTER -->
+        <!-- Instagram Nashville filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/gOpxjoq -->
         <filter id="nashville"
                 color-interpolation-filters="sRGB"
@@ -567,7 +567,7 @@
             <feBlend mode="lighten" in2="scbsd" />
         </filter>
 
-        <!-- INSTAGRAM RISE FILTER  not 100% equal -->
+        <!-- Instagram Rise filter  not 100% equal -->
         <!-- https://codepen.io/BuZZ-dEE/pen/ExjvpBo -->
         <radialGradient id="gradient_rise_before">
             <stop offset="55%" stop-color="rgba(236, 205, 169, 0.15)"/>
@@ -613,7 +613,7 @@
             <feBlend mode="overlay" in="bscs" in2="grad_risesc_after" />
         </filter>
 
-        <!-- INSTAGRAM SLUMBER FILTER -->
+        <!-- Instagram Slumber filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/YzXxOJP -->
         <filter id="slumber"
                 color-interpolation-filters="sRGB"
@@ -634,7 +634,7 @@
             <feBlend mode="soft-light" in2="sbl" />
         </filter>
 
-        <!-- INSTAGRAM STINSON FILTER -->
+        <!-- Instagram Stinson filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/yLNoxwj -->
         <filter id="stinson"
                 color-interpolation-filters="sRGB"
@@ -659,7 +659,7 @@
             <feBlend mode="soft-light" in2="csb" />
         </filter>
 
-        <!-- INSTAGRAM VALENCIA FILTER -->
+        <!-- Instagram Valencia filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/WNvEgVX -->
         <filter id="valencia"
                 color-interpolation-filters="sRGB"
@@ -689,7 +689,7 @@
             <feBlend mode="exclusion" in2="cbs"/>
         </filter>
 
-        <!-- INSTAGRAM WILLOW FILTER -->
+        <!-- Instagram Willow filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/dyozEyP -->
         <radialGradient id="gradient_willow" cx="40%">
             <stop offset="55%" stop-color="#d4a9af" stop-opacity="0%"/>
@@ -730,7 +730,7 @@
             <feBlend mode="color" in2="gcbblend" />
         </filter>
 
-        <!-- INSTAGRAM HEFE FILTER -->
+        <!-- Instagram Hefe filter -->
         <filter id="hefe"
                 color-interpolation-filters="sRGB"
                 filterUnits="objectBoundingBox"
@@ -763,7 +763,7 @@
             <feBlend mode="initial" in2="csshb"/>
         </filter>
         
-        <!-- pixelfed INSTAGRAM Ashby FILTER -->
+        <!-- pixelfed Instagram Ashby filter -->
         <!-- https://codepen.io/BuZZ-dEE/pen/XWbZBXy -->
         <filter id="ashby"
                 color-interpolation-filters="sRGB"
