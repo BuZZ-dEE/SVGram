@@ -9,6 +9,8 @@
 
 ## 37 [Instagram filter effects in SVG][0]
 
+All filters should work in Chrome / Chromium based browser. Firefox has a problem using `feImage`, which is used for the gradients, because of this [bug][38].
+
 ### filter ids
 
 - [1977][1]
@@ -91,3 +93,4 @@ filters are defined in **defs**. see how to use svg defs in html and css.
 [35]: https://codepen.io/BuZZ-dEE/pen/NWqYLOJ
 [36]: https://codepen.io/BuZZ-dEE/pen/jOPzgog
 [37]: https://codepen.io/BuZZ-dEE/pen/poJVzRg
+[38]: https://bugzilla.mozilla.org/show_bug.cgi?id=455986
