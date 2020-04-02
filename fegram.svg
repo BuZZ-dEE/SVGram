@@ -120,9 +120,9 @@
                                    0      0      0      1 0" />
             <!-- contrast -->
             <feComponentTransfer result="sc">
-                <feFuncR type="linear" slope="1.4" intercept="0,025"/>
-                <feFuncG type="linear" slope="1.4" intercept="0,025"/>
-                <feFuncB type="linear" slope="1.4" intercept="0,025"/>
+                <feFuncR type="linear" slope="1.4" intercept="0.025"/>
+                <feFuncG type="linear" slope="1.4" intercept="0.025"/>
+                <feFuncB type="linear" slope="1.4" intercept="0.025"/>
             </feComponentTransfer>
             <feFlood flood-color="rgb(161,44,199,.31)"/>
             <feBlend mode="lighten" in="sc" />
@@ -713,9 +713,9 @@
           
             <!-- contrast -->
             <feComponentTransfer>
-                <feFuncR type="linear" slope="0.95" intercept="0,025"/>
-                <feFuncG type="linear" slope="0.95" intercept="0,025"/>
-                <feFuncB type="linear" slope="0.95" intercept="0,025"/>
+                <feFuncR type="linear" slope="0.95" intercept="0.025"/>
+                <feFuncG type="linear" slope="0.95" intercept="0.025"/>
+                <feFuncB type="linear" slope="0.95" intercept="0.025"/>
             </feComponentTransfer>
             <!-- brightness -->
             <feComponentTransfer result="gcb">
